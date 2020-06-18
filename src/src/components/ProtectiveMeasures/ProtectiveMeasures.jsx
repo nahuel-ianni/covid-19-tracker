@@ -31,7 +31,6 @@ const ProtectiveMeasures = () => {
                         </li>
                         <li>
                             <img src={socialDistancingImage} className={styles.img} alt="Maintain social distancing" />
-
                             <div>
                                 <h3>Maintain social distancing</h3>
                                 <p>Maintain at least 1 metre (3 feet) distance between yourself and others.</p>
