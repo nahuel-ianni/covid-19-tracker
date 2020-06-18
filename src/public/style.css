@@ -1,0 +1,42 @@
+/* -------------------------------------------------
+    Variables
+   ------------------------------------------------- */
+
+:root {
+    /* --accent-color-1: #d81159;
+    --accent-color-2: #8f2d56;
+    --accent-color-3: #218380;
+    --accent-color-4: #73d2de; */
+
+    --dark-color: #212121;
+    --dark-high-contrast: #fff;
+
+    /* --light-color: #505050; */
+}
+
+/* -------------------------------------------------
+    Element styles
+   ------------------------------------------------- */
+
+body,
+html {
+    color: var(--font-color);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .025rem;
+    line-height: 1.5;
+    margin: 0;
+    word-spacing: .075rem;
+}
+
+footer {
+    border-top: .2rem solid #218380;
+    margin-top: 5rem;
+}
+
+footer,
+header {
+    background-color: var(--dark-color);
+    color: var(--dark-high-contrast);
+    padding: 1.5rem 0;
+    text-align: center;
+}
