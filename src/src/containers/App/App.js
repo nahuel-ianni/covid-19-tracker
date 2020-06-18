@@ -1,15 +1,13 @@
 import React, { Fragment } from 'react';
 
-import { Footer, Header } from '../../components'
+import { Footer, Header, Main } from '../../components'
 
 class App extends React.Component {
 	render() {
 		return (
 			<Fragment>
 				<Header />
-
-				<main>Body</main>
-
+				<Main />
 				<Footer />
 			</Fragment>
 		)
