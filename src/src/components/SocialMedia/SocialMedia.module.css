@@ -5,9 +5,10 @@
 a {
     background-color: var(--dark-reduced);
     color: var(--dark-high-contrast);
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     text-decoration: none;
-    transition: all .15s ease-out;
+    transition: all .2s ease-out;
+    position: relative;
 }
 
 a:focus,
@@ -29,4 +30,14 @@ ul {
     list-style: none;
     justify-content: center;
     padding: 0;
+}
+
+svg {
+    --scale: 50%;
+
+    height: var(--scale);
+    left: calc(var(--scale) / 2);;
+    position: absolute;
+    top: calc(var(--scale) / 2%);
+    width: var(--scale);
 }
