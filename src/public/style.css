@@ -9,7 +9,11 @@
     --accent-color-4: #73d2de; */
 
     --dark-color: #212121;
+    --dark-reduced: #505050;
     --dark-high-contrast: #fff;
+
+    --interactive-background: #86a59c;
+    --interactive-contrast: #000;
 
     /* --light-color: #505050; */
 }
