@@ -1,12 +1,14 @@
 import React from 'react';
 
+import { ProtectiveMeasures } from '../../components';
+
 import Container from '@material-ui/core/Container';
 
 const Main = () => {
     return (
         <main>
             <Container>
-                Body
+                <ProtectiveMeasures />
 			</Container>
         </main>
     )
