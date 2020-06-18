@@ -3,13 +3,13 @@ import React from 'react';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
-import washHandsImage from '../../images/wash-hands.svg';
+import washHandsImage from '../../images/hand-sanitizer.svg';
 import socialDistancingImage from '../../images/social-distancing.svg';
-import crowdedSpaceImage from '../../images/news.svg';
-import touchFaceImage from '../../images/doctor.svg';
-import respiratoryHygieneImage from '../../images/flu-mask.svg';
-import stayHomeImage from '../../images/news.svg';
-import hospitalImage from '../../images/hospital.svg';
+import crowdedSpaceImage from '../../images/avoid-crowds.svg';
+import touchFaceImage from '../../images/protected-face.svg';
+import respiratoryHygieneImage from '../../images/respiratory-hygiene.svg';
+import behaveResponsiblyImage from '../../images/face-mask.svg';
+import hospitalImage from '../../images/phone.svg';
 import newsImage from '../../images/news.svg';
 
 import styles from './ProtectiveMeasures.module.css';
@@ -59,7 +59,7 @@ const ProtectiveMeasures = () => {
                             </div>
                         </li>
                         <li>
-                            <img src={stayHomeImage} className={styles.img} alt="Behave consciously" />
+                            <img src={behaveResponsiblyImage} className={styles.img} alt="Behave consciously" />
                             <div>
                                 <h3>Behave consciously</h3>
                                 <p> Stay home and self-isolate even with minor symptoms such as cough, headache, mild fever, until you recover. Have someone bring you supplies. If you need to leave your house, wear a mask to avoid infecting others.</p>

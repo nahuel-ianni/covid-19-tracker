@@ -50,6 +50,14 @@ h2 {
     text-align: center;
 }
 
+h3 {
+    margin: 0;
+}
+
 main {
     margin: 2.5rem auto;
+}
+
+p {
+    margin: .5rem 0;
 }
