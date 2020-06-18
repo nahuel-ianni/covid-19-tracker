@@ -3,11 +3,6 @@
    ------------------------------------------------- */
 
 :root {
-    /* --accent-color-1: #d81159;
-    --accent-color-2: #8f2d56;
-    --accent-color-3: #218380;
-    --accent-color-4: #73d2de; */
-
     --dark-color: #212121;
     --dark-reduced: #505050;
     --dark-high-contrast: #fff;
@@ -15,7 +10,9 @@
     --interactive-background: #86a59c;
     --interactive-contrast: #000;
 
-    /* --light-color: #505050; */
+    --light-color: #f7fafc;
+
+    --separator: #218380;
 }
 
 /* -------------------------------------------------
@@ -24,6 +21,7 @@
 
 body,
 html {
+    background-color: var(--light-color);
     color: var(--font-color);
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .025rem;
@@ -33,8 +31,7 @@ html {
 }
 
 footer {
-    border-top: .2rem solid #218380;
-    margin-top: 5rem;
+    border-top: .2rem solid var(--separator);
 }
 
 footer,
@@ -43,4 +40,12 @@ header {
     color: var(--dark-high-contrast);
     padding: 1.5rem 0;
     text-align: center;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+main {
+    margin: 5rem auto;
 }
