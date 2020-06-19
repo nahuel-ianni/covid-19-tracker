@@ -1,0 +1,26 @@
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.container {
+    margin: .5rem;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.h3 {
+    font-size: medium;
+    font-weight: 400;
+}
+
+.value {
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    padding: 0;
+}

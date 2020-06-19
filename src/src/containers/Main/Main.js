@@ -12,16 +12,16 @@ class Main extends React.Component {
 
     async componentDidMount() {
         const summary = await getSummaryAPI();
-        this.setState({data: summary.Global});
+        this.setState({ data: summary.Global });
     }
 
     render() {
-        const {data} = this.state;
+        const { data } = this.state;
 
         return (
             <main>
                 <Container>
-                    <StatsSummary data={data}/>
+                    <StatsSummary data={data} />
                     <ProtectiveMeasures />
                 </Container>
             </main>
