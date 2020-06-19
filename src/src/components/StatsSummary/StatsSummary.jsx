@@ -31,7 +31,7 @@ const StatsSummary = ({ data: { NewConfirmed, NewDeaths, NewRecovered, TotalConf
     const listItems = statistics.map((item, i) =>
         <li key={i}>
             <Card className={styles.container}>
-                <Typography variant="subtitle1" component="h3">
+                <Typography component="h3" variant="subtitle1">
                     {item.title}
                 </Typography>
 
@@ -39,7 +39,7 @@ const StatsSummary = ({ data: { NewConfirmed, NewDeaths, NewRecovered, TotalConf
 
                 <br /><br />
 
-                <Typography variant="subtitle2" color="textSecondary" component="p">
+                <Typography component="p" variant="subtitle2" color="textSecondary">
                     {item.dailyDesc}
                 </Typography>
 
