@@ -19,8 +19,8 @@ const ProtectiveMeasures = () => {
         [NewsSvg, 'Stay updated', 'Stay updated', 'Keep up to date on the latest information from trusted sources, such as WHO or your local and national health authorities.'],
     ];
 
-    const listItems = measures.map(([src, alt, title, desc]) =>
-        <li>
+    const listItems = measures.map(([src, alt, title, desc], i) =>
+        <li key={i}>
             <img src={src} className={styles.img} alt={alt} />
             <div>
                 <h3>{title}</h3>
