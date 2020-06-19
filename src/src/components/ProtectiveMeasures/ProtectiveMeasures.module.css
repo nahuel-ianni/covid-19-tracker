@@ -3,12 +3,12 @@
    ------------------------------------------------- */
 
 .a {
-    display: block;
+    /* display: block;
     color: var(--dark-reduced);
     font-size: small;
     font-style: italic;
     margin: .5rem .5rem 0 0;
-    text-align: right;
+    text-align: right; */
     text-decoration: none;
 }
 

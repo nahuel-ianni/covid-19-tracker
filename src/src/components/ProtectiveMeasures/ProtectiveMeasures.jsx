@@ -41,7 +41,7 @@ const ProtectiveMeasures = () => {
                 </CardContent>
             </Card>
 
-            <a className={styles.a} href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" rel="noopener noreferrer">Source: World Health Organization</a>
+            <a className="legend" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" rel="noopener noreferrer">Source: World Health Organization</a>
         </section>
     )
 }

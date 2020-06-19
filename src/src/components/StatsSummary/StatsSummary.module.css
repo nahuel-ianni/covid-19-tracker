@@ -2,6 +2,11 @@
     Class styles
    ------------------------------------------------- */
 
+.cases {
+    font-size: xx-large;
+    font-weight: 400;
+}
+
 .container {
     margin: .5rem;
     padding: 1.5rem;
@@ -10,11 +15,6 @@
 
 .h3 {
     font-size: medium;
-    font-weight: 400;
-}
-
-.value {
-    font-size: xx-large;
     font-weight: 400;
 }
 
