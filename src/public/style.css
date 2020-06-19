@@ -61,6 +61,19 @@ header {
     border-bottom: .15rem solid var(--separator);
 }
 
+hr {
+    background-image: linear-gradient(
+        to right, 
+        rgba(0, 0, 0, .05), 
+        rgba(0, 0, 0, .2), 
+        rgba(0, 0, 0, .05));
+    border: 0;
+    height: 1px;
+    margin: 2.5rem auto;
+    width: 80%;
+
+}
+
 main {
     margin: 2.5rem auto;
 }
@@ -79,7 +92,6 @@ section {
 
 .legend {
     display: block;
-    color: var(--dark-reduced);
     font-size: small!important;
     font-style: italic;
     margin: .5rem 1rem 0 0!important;
