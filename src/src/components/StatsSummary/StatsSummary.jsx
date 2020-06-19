@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Card from '@material-ui/core/Card';
+import { Card, Typography } from '@material-ui/core';
 import CountUp from 'react-countup';
 
 import styles from './StatsSummary.module.css';
@@ -26,22 +26,23 @@ const StatsSummary = ({ data: { NewConfirmed, NewDeaths, NewRecovered, TotalConf
             dailyDesc: 'DEATHS (SINCE LAST UPDATE)',
             dailyCases: Number(NewDeaths)
         },
-
-
-        // { title: 'RECOVERED (SINCE LAST UPDATE)', cases: Number(NewRecovered) },
-        // { title: 'CONFIRMED (SINCE LAST UPDATE)', cases: Number(NewConfirmed) },
-        // { title: 'DEATHS (SINCE LAST UPDATE)', cases: Number(NewDeaths) },
     ];
 
     const listItems = statistics.map((item, i) =>
         <li key={i}>
             <Card className={styles.container}>
-                <h3 className={styles.h3}>{item.title}</h3>
+                <Typography variant="subtitle1" component="h3">
+                    {item.title}
+                </Typography>
+
                 <CountUp className={styles.cases} start={item.cases / 2} end={item.cases} duration={1.5} separator="," />
 
-                <br/><br/><br/>
+                <br /><br />
 
-                <p>{item.dailyDesc}</p>
+                <Typography variant="subtitle2" color="textSecondary" component="p">
+                    {item.dailyDesc}
+                </Typography>
+
                 <CountUp className={styles.cases} start={item.dailyCases / 2} end={item.dailyCases} duration={1.5} separator="," />
             </Card>
         </li>
@@ -49,13 +50,17 @@ const StatsSummary = ({ data: { NewConfirmed, NewDeaths, NewRecovered, TotalConf
 
     return (
         <section>
-            <h2>Global statistics</h2>
+            <Typography component="h2" variant="h4" gutterBottom>
+                Global statistics
+            </Typography>
 
             <ul className={styles.ul}>
                 {listItems}
             </ul>
 
-            <p className="legend">Last updated: {new Date(lastUpdate).toDateString()}</p>
+            <Typography className="legend" component="p">
+                Last updated: {new Date(lastUpdate).toDateString()}
+            </Typography>
         </section>
     )
 }
