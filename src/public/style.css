@@ -6,6 +6,8 @@
     --dark-color: #212121;
     --dark-reduced: #353535;
     --dark-high-contrast: #fff;
+    
+    --font-color: #4a5568;
 
     --interactive-background: #86a59c;
     --interactive-contrast: #000;
@@ -22,6 +24,7 @@
 body,
 html {
     background-color: var(--light-color);
+    color: var(--font-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: .025rem;
     line-height: 1.5;
@@ -65,4 +68,17 @@ main {
 
 p {
     margin: .5rem 0;
+}
+
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.legend {
+    display: block;
+    color: var(--dark-reduced);
+    font-size: small;
+    font-style: italic;
+    margin: .5rem .5rem 0 0;
+    text-align: right;
 }
