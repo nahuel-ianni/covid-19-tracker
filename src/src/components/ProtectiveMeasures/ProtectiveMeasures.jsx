@@ -8,6 +8,27 @@ import { AvoidCrowdsSvg, FaceMaskSvg, HandsSanitizerSvg, NewsSvg, PhoneSvg, Prot
 import styles from './ProtectiveMeasures.module.css';
 
 const ProtectiveMeasures = () => {
+    const measures = [
+        [HandsSanitizerSvg, 'Wash your hands frequently', 'Wash your hands frequently', 'Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.'],
+        [SocialDistancingSvg, 'Maintain social distancing', 'Maintain social distancing', 'Maintain at least 1 metre (3 feet) distance between yourself and others.'],
+        [AvoidCrowdsSvg, 'Avoid crowded spaces', 'Avoid crowded spaces', 'Avoid going to crowded places.'],
+        [ProtectedFaceSvg, 'Avoid touching your face', 'Avoid touching your face', 'Avoid touching eyes, nose and mouth.'],
+        [RespiratoryHygieneSvg, 'Practice respiratory hygiene', 'Practice respiratory hygiene', 'Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately and wash your hands.'],
+        [FaceMaskSvg, 'Behave consciously', 'Behave consciously', 'Stay home and self-isolate even with minor symptoms such as cough, headache, mild fever, until you recover. Have someone bring you supplies. If you need to leave your house, wear a mask to avoid infecting others.'],
+        [PhoneSvg, 'Seek early medical care', 'Seek early medical care', 'If you have a fever, cough and difficulty breathing, seek medical attention, but call by telephone in advance if possible and follow the directions of your local health authority.'],
+        [NewsSvg, 'Stay updated', 'Stay updated', 'Keep up to date on the latest information from trusted sources, such as WHO or your local and national health authorities.'],
+    ];
+
+    const listItems = measures.map(([src, alt, title, desc]) =>
+        <li>
+            <img src={src} className={styles.img} alt={alt} />
+            <div>
+                <h3>{title}</h3>
+                <p>{desc}</p>
+            </div>
+        </li>
+    );
+
     return (
         <section>
             <h2>Protective measures</h2>
@@ -15,62 +36,7 @@ const ProtectiveMeasures = () => {
             <Card>
                 <CardContent>
                     <ul className={styles.ul}>
-                        <li>
-                            <img src={HandsSanitizerSvg} className={styles.img} alt="Wash your hands frequently" />
-                            <div>
-                                <h3>Wash your hands frequently</h3>
-                                <p>Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={SocialDistancingSvg} className={styles.img} alt="Maintain social distancing" />
-                            <div>
-                                <h3>Maintain social distancing</h3>
-                                <p>Maintain at least 1 metre (3 feet) distance between yourself and others.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={AvoidCrowdsSvg} className={styles.img} alt="Avoid crowded spaces" />
-                            <div>
-                                <h3>Avoid crowded spaces</h3>
-                                <p> Avoid going to crowded places.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={ProtectedFaceSvg} className={styles.img} alt="Avoid touching your face" />
-                            <div>
-                                <h3>Avoid touching your face</h3>
-                                <p>Avoid touching eyes, nose and mouth.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={RespiratoryHygieneSvg} className={styles.img} alt="Practice respiratory hygiene" />
-                            <div>
-                                <h3>Practice respiratory hygiene</h3>
-                                <p>Make sure you, and the people around you, follow good respiratory hygiene. This means covering your mouth and nose with your bent elbow or tissue when you cough or sneeze. Then dispose of the used tissue immediately and wash your hands.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={FaceMaskSvg} className={styles.img} alt="Behave consciously" />
-                            <div>
-                                <h3>Behave consciously</h3>
-                                <p> Stay home and self-isolate even with minor symptoms such as cough, headache, mild fever, until you recover. Have someone bring you supplies. If you need to leave your house, wear a mask to avoid infecting others.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={PhoneSvg} className={styles.img} alt="Seek early medical care" />
-                            <div>
-                                <h3>Seek early medical care</h3>
-                                <p>If you have a fever, cough and difficulty breathing, seek medical attention, but call by telephone in advance if possible and follow the directions of your local health authority.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <img src={NewsSvg} className={styles.img} alt="Stay updated" />
-                            <div>
-                                <h3>Stay updated</h3>
-                                <p>Keep up to date on the latest information from trusted sources, such as WHO or your local and national health authorities.</p>
-                            </div>
-                        </li>
+                        {listItems}
                     </ul>
                 </CardContent>
             </Card>
