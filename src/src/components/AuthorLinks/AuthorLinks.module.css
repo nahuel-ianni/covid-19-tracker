@@ -5,10 +5,15 @@
 .a {
     background-color: var(--dark-reduced);
     color: var(--dark-high-contrast);
+    height: 1.25rem;
     padding: 1rem 1.5rem;
+    position: relative;
     text-decoration: none;
     transition: all .2s ease-out;
-    position: relative;
+}
+
+.a::before {
+    background-image: none;
 }
 
 .a:focus,
@@ -19,10 +24,6 @@
 
 .li {
     margin: 0 .25rem;
-}
-
-.p {
-    margin: 2rem 0 0 0;
 }
 
 .ul {
@@ -39,6 +40,6 @@
     height: var(--scale);
     left: calc(var(--scale) / 2);;
     position: absolute;
-    top: calc(var(--scale) / 2%);
+    top: calc(var(--scale) / 2);
     width: var(--scale);
 }
