@@ -1,2 +1,2 @@
 # Covid 19 - Tracker
-Track the current virus status across the globe.
+Track the status of the virus across the globe.
