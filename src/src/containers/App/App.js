@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-import { SocialMediaLinks } from '../../components';
+import { AuthorLinks } from '../../components';
 
 import { Typography } from '@material-ui/core';
 
@@ -15,7 +15,7 @@ class App extends React.Component {
 
 
                 <footer>
-                    <SocialMediaLinks />
+                    <AuthorLinks />
 
                     <p>Made by Nahuel Ianni</p>
                     <p>Icons made by <a className="link" href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a className="link" href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></p>

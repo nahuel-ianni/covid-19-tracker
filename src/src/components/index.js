@@ -1,1 +1,1 @@
-export { default as SocialMediaLinks } from './SocialMediaLinks/SocialMediaLinks';
+export { default as AuthorLinks } from './AuthorLinks/AuthorLinks';

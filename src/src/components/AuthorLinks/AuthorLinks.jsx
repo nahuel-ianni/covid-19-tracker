@@ -1,8 +1,8 @@
 import React from 'react';
 
-import styles from './SocialMediaLinks.module.css';
+import styles from './AuthorLinks.module.css';
 
-const SocialMediaLinks = () => {
+const AuthorLinks = () => {
     return (
         <ul className={styles.ul}>
             <li className={styles.li}>
@@ -30,4 +30,4 @@ const SocialMediaLinks = () => {
     );
 }
 
-export default SocialMediaLinks;
+export default AuthorLinks;
