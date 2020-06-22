@@ -1,0 +1,137 @@
+/* -------------------------------------------------
+    Variables
+   ------------------------------------------------- */
+
+:root {
+    --dark-color: #212121;
+    --dark-reduced: #353535;
+    --dark-high-contrast: #fff;
+
+    --font-color: #4a5568;
+
+    --interactive-color: #e9b872;
+    --interactive-background: #86a59c;
+    --interactive-contrast: #000;
+
+    --light-color: #f7fafc;
+
+    --separator: #218380;
+}
+
+/* -------------------------------------------------
+    Element styles
+   ------------------------------------------------- */
+
+a {
+    color: var(--interactive-color);
+    display: inline-block;
+    line-height: .9;
+    overflow: hidden;
+    padding: 5px 2px;
+    position: relative;
+    text-decoration: none;
+    transition: color .2s ease-out;
+    vertical-align: bottom;
+    z-index: 0;
+}
+
+a:focus,
+a:hover {
+    color: var(--interactive-contrast);
+}
+
+a::before {
+    background-image: linear-gradient(45deg,
+            var(--dark-color),
+            var(--interactive-color));
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: translateY(calc(100% - 1px));
+    transition: transform .2s ease-out;
+    width: 100%;
+    z-index: -1;
+}
+
+a:focus::before,
+a:hover::before {
+    transform: translateY(0);
+}
+
+body,
+html {
+    background-color: var(--light-color);
+    color: var(--font-color);
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: .025rem;
+    line-height: 1.5;
+    margin: 0;
+    word-spacing: .025rem;
+}
+
+footer {
+    border-top: .2rem solid var(--separator);
+}
+
+footer,
+header {
+    background-color: var(--dark-color);
+    color: var(--dark-high-contrast);
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    font-weight: 600;
+    margin: 0;
+}
+
+header {
+    border-bottom: .15rem solid var(--separator);
+}
+
+hr {
+    background-image: linear-gradient(to right,
+            rgba(0, 0, 0, .05),
+            rgba(0, 0, 0, .2),
+            rgba(0, 0, 0, .05));
+    border: 0;
+    height: 1px;
+    margin: 2.5rem auto;
+    width: 80%;
+
+}
+
+main {
+    margin: 2.5rem auto;
+}
+
+p {
+    margin: .5rem 0;
+}
+
+section {
+    margin: 5rem 0;
+}
+
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.legend {
+    display: block;
+    font-size: small !important;
+    font-style: italic;
+    margin: .5rem 1rem 0 0 !important;
+    text-align: right;
+}
