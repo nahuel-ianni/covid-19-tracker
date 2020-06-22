@@ -10,40 +10,52 @@ const StatsSummary = ({ data: { NewConfirmed, NewDeaths, NewRecovered, TotalConf
     const statistics = [
         {
             title: 'RECOVERED CASES',
-            cases: Number(TotalRecovered),
-            dailyDesc: 'RECOVERED (SINCE LAST UPDATE)',
-            dailyCases: Number(NewRecovered)
+            // dailyDesc: 'RECOVERED (SINCE LAST UPDATE)',
+            total: Number(TotalRecovered),
+            daily: Number(NewRecovered)
         },
         {
             title: 'CONFIRMED CASES',
-            cases: Number(TotalConfirmed),
-            dailyDesc: 'CONFIRMED (SINCE LAST UPDATE)',
-            dailyCases: Number(NewConfirmed)
+            // dailyDesc: 'CONFIRMED (SINCE LAST UPDATE)',
+            total: Number(TotalConfirmed),
+            daily: Number(NewConfirmed)
         },
         {
             title: 'DEATHS',
-            cases: Number(TotalDeaths),
-            dailyDesc: 'DEATHS (SINCE LAST UPDATE)',
-            dailyCases: Number(NewDeaths)
+            // dailyDesc: 'DEATHS (SINCE LAST UPDATE)',
+            total: Number(TotalDeaths),
+            daily: Number(NewDeaths)
         },
     ];
 
     const listItems = statistics.map((item, i) =>
         <li key={i}>
             <Card className={styles.container}>
-                <Typography component="h3" variant="subtitle1">
-                    {item.title}
-                </Typography>
+                {/* <CardHeader title={item.title} component="h3" variant="subtitle1" /> */}
+                {/* <CardContent> */}
+                    <Typography component="h3" variant="subtitle1">
+                        {item.title}
+                    </Typography>
 
-                <CountUp className={styles.cases} start={item.cases / 2} end={item.cases} duration={1.5} separator="," />
 
-                <br /><br />
+                    <CountUp className={styles.cases} start={item.total / 2} end={item.total} duration={1.5} separator="," />
 
-                <Typography component="p" variant="subtitle2" color="textSecondary">
-                    {item.dailyDesc}
-                </Typography>
+                    <br /><br />
 
-                <CountUp className={styles.cases} start={item.dailyCases / 2} end={item.dailyCases} duration={1.5} separator="," />
+                    <Typography component="p" variant="body2" color="textSecondary" gutterBottom>
+                        {((item.daily / item.total) * 100).toFixed(2)}% in the past 24 hours
+                    </Typography>
+
+                    {/* <Typography component="p" variant="subtitle2" color="textSecondary" align="left">
+                        Extended report
+                    </Typography> */}
+
+                    {/* <hr />
+
+                    <Typography component="p" variant="body2" color="textSecondary" align="left">
+                        
+                    </Typography> */}
+                {/* </CardContent> */}
             </Card>
         </li>
     );
@@ -58,7 +70,7 @@ const StatsSummary = ({ data: { NewConfirmed, NewDeaths, NewRecovered, TotalConf
                 {listItems}
             </ul>
 
-            <Typography className="legend" component="p">
+            <Typography className="legend" component="p" color="textSecondary">
                 Last updated: {new Date(lastUpdate).toDateString()}
             </Typography>
         </section>
