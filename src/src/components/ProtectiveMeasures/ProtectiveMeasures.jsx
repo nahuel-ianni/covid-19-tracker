@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import { Card, CardContent, Link, Typography } from '@material-ui/core';
 
 import { AvoidCrowdsSvg, FaceMaskSvg, HandsSanitizerSvg, NewsSvg, PhoneSvg, ProtectedFaceSvg, RespiratoryHygieneSvg, SocialDistancingSvg } from '../../images';
 
@@ -31,7 +30,9 @@ const ProtectiveMeasures = () => {
 
     return (
         <section>
-            <h2>Protective measures</h2>
+            <Typography component="h2" variant="h4" gutterBottom>
+                Basic protective measures
+            </Typography>
 
             <Card>
                 <CardContent>
@@ -41,7 +42,11 @@ const ProtectiveMeasures = () => {
                 </CardContent>
             </Card>
 
-            <a className="legend" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" rel="noopener noreferrer">Source: World Health Organization</a>
+            <Typography className="legend" color="textSecondary">
+                <Link href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" rel="noopener noreferrer" color="inherit">
+                    Source: World Health Organization
+                </Link>
+            </Typography>
         </section>
     )
 }
