@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from './ProtectiveMeasures.module.css';
+import styles from './PreventiveMeasures.module.css';
 import { RecommendedMeasures } from '../../data/static';
 
 import { Card, CardContent, Link, Typography } from '@material-ui/core';
 
-const ProtectiveMeasures = () => {
+const PreventiveMeasures = () => {
     const listItems = RecommendedMeasures.map((item, i) =>
         <li key={i}>
             <img src={item.img} className={styles.img} alt={item.img_desc} />
@@ -39,4 +39,4 @@ const ProtectiveMeasures = () => {
     )
 }
 
-export default ProtectiveMeasures;
+export default PreventiveMeasures;
