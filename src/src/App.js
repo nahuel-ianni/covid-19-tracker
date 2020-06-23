@@ -12,10 +12,10 @@ export default class App extends React.Component {
         return (
             <Fragment>
                 <header>
-                    <Typography component="h1" variant="h3">
+                    <Typography component="h1" variant="inherit">
                         C<img src={RedVirusSvg} className={styles.virus} alt="Covid-19 virus drawing" />VID-19 Tracker
                     </Typography>
-                    <Typography component="p" variant="body2">- Stay safe -</Typography>
+                    <Typography variant="body2">- Stay safe -</Typography>
                 </header>
 
                 <main>
@@ -25,8 +25,8 @@ export default class App extends React.Component {
                 <footer>
                     <AuthorLinks />
 
-                    <Typography component="p" gutterBottom>Made by Nahuel Ianni</Typography>
-                    <Typography component="p">Icons made by <a className={styles.a} href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a className={styles.a} href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></Typography>
+                    <Typography gutterBottom>Made by Nahuel Ianni</Typography>
+                    <Typography>Icons made by <a className={styles.a} href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a className={styles.a} href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></Typography>
                 </footer>
             </Fragment>
         )
