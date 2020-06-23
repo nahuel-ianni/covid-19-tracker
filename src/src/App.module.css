@@ -55,14 +55,14 @@
 
 @keyframes spin {
     0% {
-        transform: rotate(0deg) scale(.9);
+        transform: rotate(0deg) scale(.95);
     }
 
     50% {
-        transform: rotate(180deg) scale(1.1);
+        transform: rotate(180deg) scale(1.25);
     }
 
     100% {
-        transform: rotate(360deg) scale(.9);
+        transform: rotate(360deg) scale(.95);
     }
 }
