@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 
+import styles from './App.module.css';
 import { Home } from './pages';
 import { AuthorLinks } from './components';
 import { RedVirusSvg } from './images';
-import styles from './App.module.css';
 
 import { Typography } from '@material-ui/core';
 
