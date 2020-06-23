@@ -5,7 +5,6 @@ import { RecommendedMeasures } from '../../data/static';
 
 import { Card, CardContent, Link, Typography } from '@material-ui/core';
 
-
 const ProtectiveMeasures = () => {
     const listItems = RecommendedMeasures.map((item, i) =>
         <li key={i}>
