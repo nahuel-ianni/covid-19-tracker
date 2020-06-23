@@ -50,6 +50,8 @@ h1 {
 }
 
 h2 {
+    font-size: 2.125rem;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -59,7 +61,7 @@ h3 {
 }
 
 header {
-    border-bottom: .15rem solid var(--separator);
+    border-bottom: .2rem solid var(--separator);
 }
 
 hr {
