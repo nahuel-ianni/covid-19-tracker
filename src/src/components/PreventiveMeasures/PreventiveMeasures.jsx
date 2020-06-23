@@ -11,7 +11,7 @@ const PreventiveMeasures = () => {
             <img src={item.img} className={styles.img} alt={item.img_desc} />
             <div>
                 <Typography component="h3" variant="inherit">{item.title}</Typography>
-                <Typography component="p" variant="inherit">{item.content}</Typography>
+                <Typography>{item.content}</Typography>
             </div>
         </li>
     );
