@@ -4,10 +4,12 @@ import { PreventiveMeasures } from '../../components'
 
 import { Container } from '@material-ui/core';
 
-export default function Home() {
+const Home = () => {
     return (
         <Container>
             <PreventiveMeasures />
         </Container>
     )
 }
+
+export default Home;
