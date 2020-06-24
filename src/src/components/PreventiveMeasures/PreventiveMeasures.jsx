@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import styles from './PreventiveMeasures.module.css';
-import { RecommendedMeasures } from '../../data/static';
 
 import { Card, CardContent, Link, Typography } from '@material-ui/core';
 
-const PreventiveMeasures = () => {
-    const listItems = RecommendedMeasures.map((item, i) =>
+const PreventiveMeasures = (props) => {
+    const listItems = props.measures.map((item, i) =>
         <li key={i}>
             <img src={item.img} className={styles.img} alt={item.img_desc} />
             <div>
@@ -17,11 +16,7 @@ const PreventiveMeasures = () => {
     );
 
     return (
-        <section>
-            <Typography component="h2" variant="inherit" gutterBottom>
-                Preventive measures
-            </Typography>
-
+        <Fragment>
             <Card>
                 <CardContent>
                     <ul className={styles.ul}>
@@ -35,7 +30,7 @@ const PreventiveMeasures = () => {
                     Source: World Health Organization
                 </Link>
             </Typography>
-        </section>
+        </Fragment>
     )
 }
 

@@ -1,15 +1,23 @@
 import React from 'react';
 
 import { PreventiveMeasures, StatisticsPanel } from '../../components'
+import { RecommendedMeasures } from '../../data/static';
 
-import { Container } from '@material-ui/core';
+import { Container, Typography } from '@material-ui/core';
 
 const Home = () => {
     return (
         <Container>
-            <StatisticsPanel restrict="global"/>
+            <StatisticsPanel restrict="global" />
             <StatisticsPanel />
-            <PreventiveMeasures />
+
+            <section>
+                <Typography component="h2" variant="inherit" gutterBottom>
+                    Preventive measures
+                </Typography>
+
+                <PreventiveMeasures measures={RecommendedMeasures} />
+            </section>
         </Container>
     )
 }
