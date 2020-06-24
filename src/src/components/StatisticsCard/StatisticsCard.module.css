@@ -10,15 +10,20 @@
 }
 
 .container {
+    padding-bottom: 0!important;
     text-align: center;
 }
 
 .dead {
-    color: #e53e3e!important;
+    color: #e53e3e;
 }
 
 .infected {
     color: #4a5568;
+}
+
+.note {
+    padding: .5rem;
 }
 
 .recovered {
