@@ -28,7 +28,7 @@ const StatisticsPanel = (props) => {
                 {
                     listItems.map((item, i) =>
                         <li key={i}>
-                            <StatisticsCard title={item.title} total={item.total} img={item.img} type={item.type} />
+                            <StatisticsCard title={item.title} total={item.total} new={item.new} img={item.img} type={item.type} />
                         </li>
                     )
                 }
