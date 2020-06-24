@@ -1,25 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-import { PreventiveMeasures, StatisticsPanel } from '../../components'
-import { GetRecommendedMeasures } from '../../data/service';
+import { PreventiveMeasures, StatisticsPanel } from '../../components';
+import { GetCardValues, GetRecommendedMeasures } from '../../data/service';
 
 import { Container, Typography } from '@material-ui/core';
 
 const Home = () => {
     const preventiveMeasures = GetRecommendedMeasures();
 
+    const [globalValues, setGlobalValues] = useState([]);
+    // const [localValues, setLocalValues] = useState([]);
+
+    useEffect(() => {
+        const getData = async () => { setGlobalValues(await GetCardValues()); }
+        getData();
+    }, []);
+
     return (
         <Container>
             <section>
                 <Typography component="h2" variant="inherit" gutterBottom>Global stats</Typography>
-                <StatisticsPanel />
+                <StatisticsPanel values={globalValues} />
             </section>
 
-            {/* <section>
-                ------- ACA VA UNA BARRA DE BUSQUEDA
-                <Typography component="h2" variant="inherit" gutterBottom>PONER EL NOMBRE DEL PAIS, OCULTAR SI NO HAY PAIS SELECCIONADO</Typography>
-                <StatisticsPanel />
-            </section> */}
+            <section>
+                
+            </section>
 
             <section>
                 <Typography component="h2" variant="inherit" gutterBottom>Preventive measures</Typography>
