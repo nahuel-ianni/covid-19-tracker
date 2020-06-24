@@ -1,0 +1,11 @@
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.ul {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(3, 1fr);
+    list-style: none;
+    padding: 0;
+}
