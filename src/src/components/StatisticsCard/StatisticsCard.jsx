@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
         }),
     },
     expandOpen: { transform: 'rotate(180deg)', },
-    // casesColor: { color: getCaseColor(), }
 }));
 
 const getCaseClass = (cardType) => {
@@ -39,7 +38,7 @@ const getCaseClass = (cardType) => {
             value = styles.infected;
             break;
     }
-    console.log(value)
+
     return value;
 }
 

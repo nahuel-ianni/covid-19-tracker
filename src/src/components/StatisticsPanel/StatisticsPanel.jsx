@@ -12,17 +12,11 @@ const StatisticsPanel = (props) => {
     const title = <Typography component="h2" variant="inherit" gutterBottom>Global</Typography>;
     const searchBar = 'IMPLEMENT SEARCH BAR HERE';
 
-    const getHeaderContent = () => {
-        return props?.restrict === "global"
-            ? title
-            : searchBar;
-    }
+    const getHeaderContent = () => props?.restrict === "global" ? title : searchBar;
 
     useEffect(() => {
-        const getData = async () => {
-            setListItems(await GetCardValues());
-        }
-
+        const getData = async () => { setListItems(await GetCardValues()); }
+        
         getData();
     }, []);
 
