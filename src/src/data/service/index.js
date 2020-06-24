@@ -19,14 +19,14 @@ export const GetCardValues = async () => {
             type: CardType.POSITIVE,
         },
         {
-            title: 'INFECTED',
+            title: 'CONFIRMED CASES',
             total: formatValue(data?.Global?.TotalConfirmed),
             new: formatValue(data?.Global?.NewConfirmed),
             img: CardInfectedSvg,
             type: CardType.NEUTRAL,
         },
         {
-            title: 'DEAD',
+            title: 'DEATHS',
             total: formatValue(data?.Global?.TotalDeaths),
             new: formatValue(data?.Global?.NewDeaths),
             img: CardDeadSvg,
