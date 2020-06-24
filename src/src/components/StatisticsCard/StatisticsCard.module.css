@@ -9,6 +9,10 @@
     text-align: center;
 }
 
+.container {
+    text-align: center;
+}
+
 .dead {
     color: #e53e3e!important;
 }
@@ -19,8 +23,4 @@
 
 .recovered {
     color: #2f855a;
-}
-
-.container {
-    text-align: center;
 }
