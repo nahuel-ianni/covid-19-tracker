@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { PreventiveMeasures, StatisticsPanel } from '../../components';
+import { CountryPicker, PreventiveMeasures, StatisticsPanel } from '../../components';
 import { GetCardValues, GetRecommendedMeasures } from '../../data/service';
 
 import { Container, Typography } from '@material-ui/core';
@@ -14,7 +14,7 @@ const Home = () => {
     useEffect(() => {
         const getGlobalData = async () => { setGlobalValues(await GetCardValues()); }
         const getCountryData = async () => { setCountryValues(await GetCardValues('Afghanistan')); }
-        
+
         getGlobalData();
         getCountryData();
     }, []);
@@ -27,8 +27,9 @@ const Home = () => {
             </section>
 
             <section>
-                <Typography component="h2" variant="inherit" gutterBottom>UPDATE DYNAMIC - Local stats</Typography>
-                <StatisticsPanel values={countryValues} />
+                {/* <Typography component="h2" variant="inherit" gutterBottom>UPDATE DYNAMIC - Local stats</Typography> */}
+                {/* <StatisticsPanel values={countryValues} /> */}
+                <CountryPicker />
             </section>
 
             <section>
