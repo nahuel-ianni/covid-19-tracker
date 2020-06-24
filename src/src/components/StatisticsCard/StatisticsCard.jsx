@@ -7,9 +7,6 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        maxWidth: '30%',
-    },
     expand: {
         transform: 'rotate(0deg)',
         marginLeft: 'auto',
@@ -25,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-const StatisticCard = () => {
+const StatisticsCard = () => {
     const classes = useStyles();
     const [expanded, setExpanded] = useState(false);
 
@@ -34,7 +31,7 @@ const StatisticCard = () => {
     };
 
     return (
-        <Card className={classes.root}>
+        <Card>
             <CardHeader title="Title" subheader="Subtitle"
                 avatar={
                     <Avatar aria-label="recipe" className={classes.avatar}>
@@ -76,4 +73,4 @@ const StatisticCard = () => {
     );
 }
 
-export default StatisticCard;
+export default StatisticsCard;
