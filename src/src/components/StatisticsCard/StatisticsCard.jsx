@@ -49,7 +49,7 @@ const StatisticsCard = (props) => {
 
     return (
         <Card>
-            <CardHeader title={props.title} titleTypographyProps={{ variant: "subtitle" }}
+            <CardHeader title={props.title} titleTypographyProps={{ variant: "subtitle1" }}
                 // avatar={
                 //     <Avatar src={props.img} variant="square" aria-label="recipe" />
                 // }
