@@ -1,3 +1,6 @@
+export const CardDeadSvg = require('./img-card-dead.svg');
+export const CardInfectedSvg = require('./img-card-infected.svg');
+export const CardRecoveredSvg = require('./img-card-recovered.svg');
 export const CoveredCoughSvg = require('./img-covered-cough.svg');
 export const FaceMaskSvg = require('./img-face-mask.svg');
 export const HandSanitizerSvg = require('./img-hand-sanitizer.svg');
