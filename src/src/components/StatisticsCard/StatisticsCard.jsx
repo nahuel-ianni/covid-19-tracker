@@ -49,24 +49,26 @@ const StatisticsCard = (props) => {
 
     return (
         <Card>
-            <CardHeader title={props.title} titleTypographyProps={{ variant: "subtitle1" }}
-                // avatar={
-                //     <Avatar src={props.img} variant="square" aria-label="recipe" />
-                // }
-                className={styles.container} />
+            <CardHeader title={props.title} titleTypographyProps={{ component: "h3", variant: "inherit", color: "textSecondary" }}
+                // subheader="Global"
+                className={styles.container}
+                avatar={<Avatar src={props.img} variant="square" aria-label="statistic" />}
+                action={
+                    <IconButton aria-label="share">
+                        <ShareIcon />
+                    </IconButton>
+                } />
 
             <CardContent className={styles.cases}>
                 <CountUp start={props.total / 2} end={props.total} duration={1.5} separator="," className={getCaseClass(props.type)} />
+
+                <Typography variant="body2" className={styles.note}>
+                    {((props.new / props.total) * 100).toFixed(2)}% new cases in the past 24hrs
+                </Typography>
             </CardContent>
 
             <CardActions disableSpacing>
-                <IconButton aria-label="share">
-                    <ShareIcon />
-                </IconButton>
-
-                <IconButton onClick={handleExpandClick}
-                    className={clsx(classes.expand, { [classes.expandOpen]: expanded, })}
-                    aria-expanded={expanded} aria-label="show more">
+                <IconButton onClick={handleExpandClick} className={clsx(classes.expand, { [classes.expandOpen]: expanded, })} aria-expanded={expanded} aria-label="show more">
                     <ExpandMoreIcon />
                 </IconButton>
             </CardActions>
