@@ -1,0 +1,10 @@
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.container {
+    display: flex !important;
+    flex-direction: column;
+    margin: 3rem auto !important;
+    width: 50%;
+}
