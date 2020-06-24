@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import clsx from 'clsx';
 
+import styles from './StatisticsCard.module.css';
+import { CardType } from '../../data/service';
+
 import { Card, CardHeader, CardContent, CardActions, Collapse, Avatar, IconButton, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import CountUp from 'react-countup';
 
 const useStyles = makeStyles((theme) => ({
     expand: {
@@ -14,36 +18,46 @@ const useStyles = makeStyles((theme) => ({
             duration: theme.transitions.duration.shortest,
         }),
     },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
-    avatar: {
-        backgroundColor: '#ff726f',
-    },
+    expandOpen: { transform: 'rotate(180deg)', },
+    // casesColor: { color: getCaseColor(), }
 }));
 
-const StatisticsCard = () => {
-    const classes = useStyles();
-    const [expanded, setExpanded] = useState(false);
+const getCaseClass = (cardType) => {
+    let value;
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+    switch (cardType) {
+        case CardType.POSITIVE:
+            value = styles.recovered;
+            break;
+
+        case CardType.NEGATIVE:
+            value = styles.dead;
+            break;
+
+        default:
+        case CardType.NEUTRAL:
+            value = styles.infected;
+            break;
+    }
+    console.log(value)
+    return value;
+}
+
+const StatisticsCard = (props) => {
+    const [expanded, setExpanded] = useState(false);
+    const classes = useStyles();
+    const handleExpandClick = () => { setExpanded(!expanded); };
 
     return (
         <Card>
-            <CardHeader title="Title" subheader="Subtitle"
-                avatar={
-                    <Avatar aria-label="recipe" className={classes.avatar}>
-                        !
-                    </Avatar>
-                }
-            />
+            <CardHeader title={props.title} titleTypographyProps={{ variant: "subtitle" }}
+                // avatar={
+                //     <Avatar src={props.img} variant="square" aria-label="recipe" />
+                // }
+                className={styles.container} />
 
-            <CardContent>
-                <Typography component="p" variant="body2" color="textSecondary">
-                    This impressive paella is a perfect party dish and a fun meal to cook together with your guests. Add 1 cup of frozen peas along with the mussels, if you like.
-                </Typography>
+            <CardContent className={styles.cases}>
+                <CountUp start={props.value / 2} end={props.value} duration={1.5} separator="," className={getCaseClass(props.type)} />
             </CardContent>
 
             <CardActions disableSpacing>
@@ -52,11 +66,8 @@ const StatisticsCard = () => {
                 </IconButton>
 
                 <IconButton onClick={handleExpandClick}
-                    className={clsx(classes.expand, {
-                        [classes.expandOpen]: expanded,
-                    })}                    
-                    aria-expanded={expanded} aria-label="show more"
-                >
+                    className={clsx(classes.expand, { [classes.expandOpen]: expanded, })}
+                    aria-expanded={expanded} aria-label="show more">
                     <ExpandMoreIcon />
                 </IconButton>
             </CardActions>

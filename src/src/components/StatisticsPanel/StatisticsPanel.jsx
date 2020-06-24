@@ -1,13 +1,14 @@
 import React from 'react';
 
 import styles from './StatisticsPanel.module.css';
-import { StatisticsCard } from '../../components'
+import { StatisticsCard } from '../../components';
+import { CardValues } from '../../data/service';
 
 import { Typography } from '@material-ui/core';
 
 const StatisticsPanel = (props) => {
     const title = <Typography component="h2" variant="inherit" gutterBottom>Global</Typography>;
-    const searchBar = null;
+    const searchBar = 'IMPLEMENT SEARCH BAR HERE';
 
     const getHeaderContent = () => {
         return props?.restrict === "global"
@@ -15,9 +16,9 @@ const StatisticsPanel = (props) => {
             : searchBar;
     }
 
-    const listItems = [1, 2, 3].map((item, i) =>
+    const listItems = CardValues.map((item, i) =>
         <li key={i}>
-            <StatisticsCard />
+            <StatisticsCard title={item.title} value={item.value} img={item.img} type={item.type} />
             {/* <img src={item.img} className={styles.img} alt={item.img_desc} />
             <div>
                 <Typography component="h3" variant="inherit">{item.title}</Typography>

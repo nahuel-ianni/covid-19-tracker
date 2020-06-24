@@ -1,0 +1,26 @@
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.cases {
+    color: #4a5568;
+    font-size: xx-large;
+    font-weight: 600;
+    text-align: center;
+}
+
+.dead {
+    color: #e53e3e!important;
+}
+
+.infected {
+    color: #4a5568;
+}
+
+.recovered {
+    color: #2f855a;
+}
+
+.container {
+    text-align: center;
+}
