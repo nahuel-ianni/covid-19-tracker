@@ -57,7 +57,7 @@ const StatisticsCard = (props) => {
                 className={styles.container} />
 
             <CardContent className={styles.cases}>
-                <CountUp start={props.value / 2} end={props.value} duration={1.5} separator="," className={getCaseClass(props.type)} />
+                <CountUp start={props.total / 2} end={props.total} duration={1.5} separator="," className={getCaseClass(props.type)} />
             </CardContent>
 
             <CardActions disableSpacing>
