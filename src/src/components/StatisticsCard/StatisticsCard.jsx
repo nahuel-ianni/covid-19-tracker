@@ -64,7 +64,7 @@ const StatisticsCard = (props) => {
                 <CountUp start={props.total / 2} end={props.total} duration={1.5} separator="," className={getCaseClass(props.type)} />
 
                 <Typography variant="body2" className={styles.note}>
-                    {((props.new / props.total) * 100).toFixed(2)}% new cases in the past 24hrs
+                    {((props.new / props.total) * 100).toFixed(2)}% new cases in the past 24 hours
                 </Typography>
             </CardContent>
 
