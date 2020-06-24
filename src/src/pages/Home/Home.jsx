@@ -9,11 +9,14 @@ const Home = () => {
     const preventiveMeasures = GetRecommendedMeasures();
 
     const [globalValues, setGlobalValues] = useState([]);
-    // const [localValues, setLocalValues] = useState([]);
+    const [countryValues, setCountryValues] = useState([]);
 
     useEffect(() => {
-        const getData = async () => { setGlobalValues(await GetCardValues()); }
-        getData();
+        const getGlobalData = async () => { setGlobalValues(await GetCardValues()); }
+        const getCountryData = async () => { setCountryValues(await GetCardValues('Afghanistan')); }
+        
+        getGlobalData();
+        getCountryData();
     }, []);
 
     return (
@@ -24,7 +27,8 @@ const Home = () => {
             </section>
 
             <section>
-                
+                <Typography component="h2" variant="inherit" gutterBottom>UPDATE DYNAMIC - Local stats</Typography>
+                <StatisticsPanel values={countryValues} />
             </section>
 
             <section>

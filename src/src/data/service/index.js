@@ -12,27 +12,27 @@ export const CardType = {
     NEGATIVE: 2,
 };
 
-export const GetCardValues = async () => {
-    const data = await getSummary();
+export const GetCardValues = async (countryName) => {
+    const data = await getSummary(countryName);
     return [
         {
             title: 'RECOVERED',
-            total: formatValue(data?.Global?.TotalRecovered),
-            new: formatValue(data?.Global?.NewRecovered),
+            total: formatValue(data?.TotalRecovered),
+            new: formatValue(data?.NewRecovered),
             img: CardRecoveredSvg,
             type: CardType.POSITIVE,
         },
         {
             title: 'CONFIRMED CASES',
-            total: formatValue(data?.Global?.TotalConfirmed),
-            new: formatValue(data?.Global?.NewConfirmed),
+            total: formatValue(data?.TotalConfirmed),
+            new: formatValue(data?.NewConfirmed),
             img: CardInfectedSvg,
             type: CardType.NEUTRAL,
         },
         {
             title: 'DEATHS',
-            total: formatValue(data?.Global?.TotalDeaths),
-            new: formatValue(data?.Global?.NewDeaths),
+            total: formatValue(data?.TotalDeaths),
+            new: formatValue(data?.NewDeaths),
             img: CardDeadSvg,
             type: CardType.NEGATIVE,
         },
