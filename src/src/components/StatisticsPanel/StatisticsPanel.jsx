@@ -9,7 +9,7 @@ import { Typography } from '@material-ui/core';
 const StatisticsPanel = (props) => {
     const [listItems, setListItems] = useState([]);
 
-    const title = <Typography component="h2" variant="inherit" gutterBottom>Global</Typography>;
+    const title = <Typography component="h2" variant="inherit" gutterBottom>Global stats</Typography>;
     const searchBar = 'IMPLEMENT SEARCH BAR HERE';
 
     const getHeaderContent = () => props?.restrict === "global" ? title : searchBar;
