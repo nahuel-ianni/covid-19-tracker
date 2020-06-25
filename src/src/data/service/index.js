@@ -23,7 +23,7 @@ export const GetCardValues = async (countryName) => {
             type: CardType.POSITIVE,
         },
         {
-            title: 'CONFIRMED CASES',
+            title: 'INFECTED',
             total: formatValue(data?.TotalConfirmed),
             new: formatValue(data?.NewConfirmed),
             img: CardInfectedSvg,
