@@ -9,7 +9,7 @@ const CountryPicker = ({ countries, handleCountryChange }) => {
 
     const onChange = (e) => {
         setSelectedCountry(e.target.value);
-        handleCountryChange(e.target.value.ISO2);
+        handleCountryChange(e.target.value);
     }
 
     return (

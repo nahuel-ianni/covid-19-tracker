@@ -10,6 +10,7 @@ const Home = () => {
 
     const [globalValues, setGlobalValues] = useState([]);
     const [countries, setCountries] = useState([]);
+    const [countryName, setCountryName] = useState('');
     const [countryValues, setCountryValues] = useState([]);
 
     useEffect(() => {
@@ -22,9 +23,9 @@ const Home = () => {
         getGlobalData();
     }, []);
 
-    const handleCountryChange = async (countryCode) => {
-        console.log(countryCode);
-        // setCountryValues(await GetCardValues(countryCode));
+    const handleCountryChange = async (country) => {
+        setCountryName(country?.Country);
+        setCountryValues(await GetCardValues(country?.ISO2));
     };
 
     return (
@@ -35,7 +36,7 @@ const Home = () => {
             </section>
 
             <section>
-                {/* <Typography component="h2" variant="inherit" gutterBottom>UPDATE DYNAMIC - Local stats</Typography> */}
+                <Typography component="h2" variant="inherit" gutterBottom>{countryName}</Typography>
                 <StatisticsPanel values={countryValues} />
                 <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
             </section>
