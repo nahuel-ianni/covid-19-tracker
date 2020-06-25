@@ -8,3 +8,13 @@
     margin: 3rem auto !important;
     width: 50%;
 }
+
+/* -------------------------------------------------
+    Media queries
+   ------------------------------------------------- */
+
+@media(max-width: 800px) {
+    .container {
+        width: 75%;
+    }
+}

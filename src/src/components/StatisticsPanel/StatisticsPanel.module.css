@@ -9,3 +9,18 @@
     list-style: none;
     padding: 0;
 }
+
+/* -------------------------------------------------
+    Media queries
+   ------------------------------------------------- */
+
+@media(max-width: 800px) {
+    .ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ul li {
+        margin: 1rem;
+    }
+}
