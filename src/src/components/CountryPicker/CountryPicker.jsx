@@ -22,7 +22,7 @@ const CountryPicker = ({ countries, handleCountryChange }) => {
                     <MenuItem key={country.ISO2} value={country}>{country.Country}</MenuItem>
                 )}
             </Select>
-            <FormHelperText><em>Choose a country for detailed stats</em></FormHelperText>
+            <FormHelperText><em>Select a country for detailed stats</em></FormHelperText>
         </FormControl>
     )
 }
