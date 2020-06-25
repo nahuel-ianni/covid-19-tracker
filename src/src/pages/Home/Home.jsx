@@ -15,11 +15,9 @@ const Home = () => {
 
     useEffect(() => {
         const getCountries = async () => { setCountries(await GetCountries()); }
-        // const getCountryData = async () => { setCountryValues(await GetCardValues('Afghanistan')); }
         const getGlobalData = async () => { setGlobalValues(await GetCardValues()); }
 
         getCountries();
-        // getCountryData();
         getGlobalData();
     }, []);
 
@@ -31,7 +29,7 @@ const Home = () => {
     return (
         <Container>
             <section>
-                <Typography component="h2" variant="inherit" gutterBottom>Global stats</Typography>
+                <Typography component="h2" variant="inherit" gutterBottom>Global</Typography>
                 <StatisticsPanel values={globalValues} />
             </section>
 
