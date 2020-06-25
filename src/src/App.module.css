@@ -41,12 +41,23 @@
 }
 
 .virus {
-    animation: spin 10s linear infinite;
+    animation: spin 9s linear infinite;
     display: inline;
-    margin: 0 .25rem 0 .5rem;
+    margin: 0 .125rem 0 .25rem;
     position: relative;
     top: .25rem;
     width: 2.5rem;
+}
+
+/* -------------------------------------------------
+    Media queries
+   ------------------------------------------------- */
+
+@media(max-width: 800px) {
+    .virus {
+        top: .35rem;
+        width: 2rem;
+    }
 }
 
 /* -------------------------------------------------
