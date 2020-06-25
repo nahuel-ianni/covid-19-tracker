@@ -15,11 +15,11 @@ const CountryPicker = ({ handleCountryChange }) => {
                 onChange={handleCountryChange}
             >
                 <MenuItem value="" disabled>Select country</MenuItem>
-                <MenuItem value={10}>Ten</MenuItem>
+                {/* <MenuItem value={10}>Ten</MenuItem>
                 <MenuItem value={20}>Twenty</MenuItem>
-                <MenuItem value={30}>Thirty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem> */}
             </Select>
-            <FormHelperText>* Choose a country for detailed stats</FormHelperText>
+            <FormHelperText><em>Choose a country for detailed stats</em></FormHelperText>
         </FormControl>
     )
 }
