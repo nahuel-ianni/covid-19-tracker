@@ -1,10 +1,6 @@
 import { getCountries, getSummary } from '../api';
 
-import {
-    CardDeadSvg, CardInfectedSvg, CardRecoveredSvg, CoveredCoughSvg,
-    FaceMaskSvg, HandSanitizerSvg, HelpPhoneSvg, NewspaperSvg,
-    ProtectedFaceSvg, SocialDistancingSvg, WarningMallSvg
-} from '../../images';
+import { CardDeadSvg, CardInfectedSvg, CardRecoveredSvg, CoveredCoughSvg, FaceMaskSvg, HandSanitizerSvg, HelpPhoneSvg, NewspaperSvg, ProtectedFaceSvg, SocialDistancingSvg, WarningMallSvg } from '../../images';
 
 export const CardType = {
     NEUTRAL: 0,
