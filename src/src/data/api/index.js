@@ -12,10 +12,10 @@ export const getCountries = async () => {
     return res;
 }
 
-export const getSummary = async (countryName) => {
+export const getSummary = async (countryCode) => {
     const data = { "Global": { "NewConfirmed": 139412, "TotalConfirmed": 8590132, "NewDeaths": 5071, "TotalDeaths": 462325, "NewRecovered": 81144, "TotalRecovered": 4154448 }, "Countries": [{ "Country": "Afghanistan", "CountryCode": "AF", "Slug": "afghanistan", "NewConfirmed": 658, "TotalConfirmed": 27532, "NewDeaths": 42, "TotalDeaths": 546, "NewRecovered": 1502, "TotalRecovered": 7660, "Date": "2020-06-19T08:23:06Z" }], "Date": "2020-06-19T08:23:06Z" };
-    return countryName 
-        ? data?.Countries?.find(item => item.Country === countryName)
+    return countryCode 
+        ? data?.Countries?.find(country => country.ISO2 === countryCode)
         : data?.Global;
 
     const res = await fetchData(`${baseUrl}${summary}`);

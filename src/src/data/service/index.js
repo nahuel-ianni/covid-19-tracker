@@ -12,8 +12,8 @@ export const CardType = {
     NEGATIVE: 2,
 };
 
-export const GetCardValues = async (countryName) => {
-    const data = await getSummary(countryName);
+export const GetCardValues = async (countryCode) => {
+    const data = await getSummary(countryCode);
     return [
         {
             title: 'RECOVERED',

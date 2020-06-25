@@ -14,13 +14,18 @@ const Home = () => {
 
     useEffect(() => {
         const getCountries = async () => { setCountries(await GetCountries()); }
-        const getCountryData = async () => { setCountryValues(await GetCardValues('Afghanistan')); }
+        // const getCountryData = async () => { setCountryValues(await GetCardValues('Afghanistan')); }
         const getGlobalData = async () => { setGlobalValues(await GetCardValues()); }
 
         getCountries();
-        getCountryData();
+        // getCountryData();
         getGlobalData();
     }, []);
+
+    const handleCountryChange = async (countryCode) => {
+        console.log(countryCode);
+        // setCountryValues(await GetCardValues(countryCode));
+    };
 
     return (
         <Container>
@@ -31,8 +36,8 @@ const Home = () => {
 
             <section>
                 {/* <Typography component="h2" variant="inherit" gutterBottom>UPDATE DYNAMIC - Local stats</Typography> */}
-                {/* <StatisticsPanel values={countryValues} /> */}
-                <CountryPicker countries={countries} handleCountryChange={null} />
+                <StatisticsPanel values={countryValues} />
+                <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
             </section>
 
             <section>
