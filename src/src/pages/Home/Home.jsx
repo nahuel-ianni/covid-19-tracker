@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { CountryPicker, PreventiveMeasures, StatisticsPanel } from '../../components';
-import { GetCardValues, GetRecommendedMeasures } from '../../data/service';
+import { GetCardValues, GetCountries, GetRecommendedMeasures } from '../../data/service';
 
 import { Container, Typography } from '@material-ui/core';
 
@@ -9,14 +9,17 @@ const Home = () => {
     const preventiveMeasures = GetRecommendedMeasures();
 
     const [globalValues, setGlobalValues] = useState([]);
+    const [countries, setCountries] = useState([]);
     const [countryValues, setCountryValues] = useState([]);
 
     useEffect(() => {
-        const getGlobalData = async () => { setGlobalValues(await GetCardValues()); }
+        const getCountries = async () => { setCountries(await GetCountries()); }
         const getCountryData = async () => { setCountryValues(await GetCardValues('Afghanistan')); }
+        const getGlobalData = async () => { setGlobalValues(await GetCardValues()); }
 
-        getGlobalData();
+        getCountries();
         getCountryData();
+        getGlobalData();
     }, []);
 
     return (
@@ -29,7 +32,7 @@ const Home = () => {
             <section>
                 {/* <Typography component="h2" variant="inherit" gutterBottom>UPDATE DYNAMIC - Local stats</Typography> */}
                 {/* <StatisticsPanel values={countryValues} /> */}
-                <CountryPicker />
+                <CountryPicker countries={countries} handleCountryChange={null} />
             </section>
 
             <section>

@@ -1,4 +1,4 @@
-import { getSummary } from '../api';
+import { getCountries, getSummary } from '../api';
 
 import {
     CardDeadSvg, CardInfectedSvg, CardRecoveredSvg, CoveredCoughSvg,
@@ -38,6 +38,8 @@ export const GetCardValues = async (countryName) => {
         },
     ]
 };
+
+export const GetCountries = async () => await getCountries();
 
 export const GetRecommendedMeasures = () => [
     {
