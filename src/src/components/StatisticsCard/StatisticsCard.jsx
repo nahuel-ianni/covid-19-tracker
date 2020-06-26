@@ -53,7 +53,7 @@ const StatisticsCard = (props) => {
             <CardHeader title={props.title} titleTypographyProps={{ component: "h3", variant: "inherit", color: "textSecondary" }}
                 // subheader="Global"
                 className={styles.container}
-                avatar={<Avatar src={props.img} variant="square" aria-label="statistic" />}
+                avatar={<Avatar src={props.img} alt="Card icon" variant="square" aria-label="statistic" />}
                 action={
                     <IconButton aria-label="share">
                         <ShareIcon />
