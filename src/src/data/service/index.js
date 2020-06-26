@@ -1,4 +1,4 @@
-import { getCountries, getSummary } from '../api';
+import { getCountries, getLastUpdateDateTime, getSummary } from '../api';
 
 import { CardDeadSvg, CardInfectedSvg, CardRecoveredSvg, CoveredCoughSvg, FaceMaskSvg, HandSanitizerSvg, HelpPhoneSvg, NewspaperSvg, ProtectedFaceSvg, SocialDistancingSvg, WarningMallSvg } from '../../images';
 
@@ -36,6 +36,7 @@ export const GetCardValues = async (countryCode) => {
 };
 
 export const GetCountries = async () => await getCountries();
+export const GetLastUpdateDateTime = async () => getLastUpdateDateTime();
 
 export const GetRecommendedMeasures = () => [
     {

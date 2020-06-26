@@ -12,6 +12,15 @@ export const getCountries = async () => {
     return res;
 }
 
+export const getLastUpdateDateTime = async () => {
+    const data = { "Global": { "NewConfirmed": 139412, "TotalConfirmed": 8590132, "NewDeaths": 5071, "TotalDeaths": 462325, "NewRecovered": 81144, "TotalRecovered": 4154448 }, "Countries": [{ "Country": "Afghanistan", "CountryCode": "AF", "Slug": "afghanistan", "NewConfirmed": 658, "TotalConfirmed": 27532, "NewDeaths": 42, "TotalDeaths": 546, "NewRecovered": 1502, "TotalRecovered": 7660, "Date": "2020-06-19T08:23:06Z" }], "Date": "2020-06-19T08:23:06Z" };
+    return data?.Date;
+
+    const res = await fetchData(`${baseUrl}${summary}`);
+    // console.log(res);
+    return res;
+}
+
 export const getSummary = async (countryCode) => {
     const data = { "Global": { "NewConfirmed": 139412, "TotalConfirmed": 8590132, "NewDeaths": 5071, "TotalDeaths": 462325, "NewRecovered": 81144, "TotalRecovered": 4154448 }, "Countries": [{ "Country": "Afghanistan", "CountryCode": "AF", "Slug": "afghanistan", "NewConfirmed": 658, "TotalConfirmed": 27532, "NewDeaths": 42, "TotalDeaths": 546, "NewRecovered": 1502, "TotalRecovered": 7660, "Date": "2020-06-19T08:23:06Z" }], "Date": "2020-06-19T08:23:06Z" };
     return countryCode 

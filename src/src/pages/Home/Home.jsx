@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from 'react';
 
 import { CountryPicker, PreventiveMeasures, StatisticsPanel } from '../../components';
-import { GetCardValues, GetCountries, GetRecommendedMeasures } from '../../data/service';
+import { GetCardValues, GetCountries, GetLastUpdateDateTime, GetRecommendedMeasures } from '../../data/service';
 
 import { Container, Typography } from '@material-ui/core';
 
 const Home = () => {
     const preventiveMeasures = GetRecommendedMeasures();
 
-    const [globalValues, setGlobalValues] = useState([]);
     const [countries, setCountries] = useState([]);
     const [countryName, setCountryName] = useState('');
     const [countryValues, setCountryValues] = useState([]);
+    const [globalValues, setGlobalValues] = useState([]);
+    const [lastUpdate, setLastUpdate] = useState('');
 
     useEffect(() => {
         const getCountries = async () => { setCountries(await GetCountries()); }
         const getGlobalData = async () => { setGlobalValues(await GetCardValues()); }
+        const getLastUpdate = async () => { setLastUpdate(await GetLastUpdateDateTime()); }
 
         getCountries();
         getGlobalData();
+        getLastUpdate();
     }, []);
 
     const handleCountryChange = async (country) => {
@@ -28,6 +31,10 @@ const Home = () => {
 
     return (
         <Container>
+            <Typography component="p" color="textSecondary" className="legend">
+                Last update on {new Date(lastUpdate).toLocaleString()}
+            </Typography>
+
             <section>
                 <Typography component="h2" variant="inherit" gutterBottom>Global</Typography>
                 <StatisticsPanel values={globalValues} />
