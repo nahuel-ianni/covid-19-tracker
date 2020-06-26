@@ -31,19 +31,18 @@ const Home = () => {
 
     return (
         <Container>
-            <Typography component="p" color="textSecondary" className="legend">
-                Last update on {new Date(lastUpdate).toLocaleString()}
-            </Typography>
-
             <section>
                 <Typography component="h2" variant="inherit" gutterBottom>Global</Typography>
+                <Typography component="p" color="textSecondary" className="legend" align="center">
+                    Last update on {new Date(lastUpdate).toLocaleString()}
+                </Typography>
                 <StatisticsPanel values={globalValues} />
             </section>
 
             <section>
+                <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
                 <Typography component="h2" variant="inherit" gutterBottom>{countryName}</Typography>
                 <StatisticsPanel values={countryValues} />
-                <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
             </section>
 
             <section>
