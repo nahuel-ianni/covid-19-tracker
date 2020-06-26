@@ -33,9 +33,6 @@ const Home = () => {
         <Container>
             <section>
                 <Typography component="h2" variant="inherit" gutterBottom>Global</Typography>
-                <Typography component="p" color="textSecondary" className="legend" align="center">
-                    Last update on {new Date(lastUpdate).toLocaleString()}
-                </Typography>
                 <StatisticsPanel values={globalValues} />
             </section>
 
@@ -49,6 +46,10 @@ const Home = () => {
                 <Typography component="h2" variant="inherit" gutterBottom>Preventive measures</Typography>
                 <PreventiveMeasures measures={preventiveMeasures} />
             </section>
+
+            <Typography component="p" color="textSecondary" className="legend" align="center">
+                Last updated on {new Date(lastUpdate).toLocaleString()}
+            </Typography>
         </Container>
     )
 }
