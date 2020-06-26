@@ -18,3 +18,18 @@
     grid-template-columns: auto 1fr;
     margin-bottom: 1.75rem;
 }
+
+/* -------------------------------------------------
+    Media queries
+   ------------------------------------------------- */
+
+@media(max-width: 800px) {
+    .img {
+        margin: 0 auto;
+    }
+
+    .ul li {
+        grid-template-columns: auto;
+        text-align: center;
+    }
+}
