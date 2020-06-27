@@ -45,37 +45,39 @@ const StatisticsCard = (props) => {
     const totalCases = props.total && props.total > 0 ? props.total : 0;
     const percentage = props.total && props.new ? GetPercentage(props.new, props.total) : 0;
 
-    const getExtras = () =>
+    const getCardActions = () =>
         props.extras
             ?
             (
-                <Fragment>
-                    <CardActions className={styles.container} disableSpacing>
-                        <IconButton onClick={handleExpandClick} className={clsx(classes.expand, { [classes.expandOpen]: expanded, }, styles.actions)} aria-expanded={expanded} aria-label="show more">
-                            <ExpandMoreIcon />
-                        </IconButton>
-                    </CardActions>
-
-                    <Collapse in={expanded} timeout="auto">
-                        <CardContent>
-                            <List className={styles.ul}>
-                                {props.extras.map((item, i) =>
-                                    <Fragment>
-                                        {i !== 0
-                                            ? <ListItem><Divider /></ListItem>
-                                            : null
-                                        }
-                                        <ListItem>
-                                            <Typography variant="body2">{item}</Typography>
-                                        </ListItem>
-                                    </Fragment>
-                                )}
-                            </List>
-                        </CardContent>
-                    </Collapse>
-                </Fragment>
+                <CardActions className={styles.container} disableSpacing>
+                    <IconButton onClick={handleExpandClick} className={clsx(classes.expand, { [classes.expandOpen]: expanded, }, styles.actions)} aria-expanded={expanded} aria-label="show more">
+                        <ExpandMoreIcon />
+                    </IconButton>
+                </CardActions>
             )
             : null;
+
+    const getCollapseContent = () =>
+        props.extras
+            ?
+            (
+                <Collapse in={expanded} timeout="auto">
+                    <List className={styles.ul}>
+                        {props.extras.map((item, i) =>
+                            <Fragment>
+                                {getDivider(i)}
+
+                                <ListItem>
+                                    <Typography variant="body2">{item}</Typography>
+                                </ListItem>
+                            </Fragment>
+                        )}
+                    </List>
+                </Collapse>
+            )
+            : null;
+
+    const getDivider = (index) => index !== 0 ? <ListItem><Divider /></ListItem> : null;
 
     return (
         <Card>
@@ -97,7 +99,8 @@ const StatisticsCard = (props) => {
                 </Typography>
             </CardContent>
 
-            {getExtras()}
+            {getCardActions()}
+            {getCollapseContent()}
         </Card>
     );
 }
