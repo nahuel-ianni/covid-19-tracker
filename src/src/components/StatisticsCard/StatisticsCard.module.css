@@ -40,3 +40,12 @@
 .recovered {
     color: #2f855a;
 }
+
+.ul {
+    padding: 0!important;
+}
+
+.ul li {
+    display: flex;
+    justify-content: center;
+}
