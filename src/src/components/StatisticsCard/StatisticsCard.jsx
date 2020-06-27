@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import styles from './StatisticsCard.module.css';
 import { CardType } from '../../data/service';
 
-import { Card, CardHeader, CardContent, CardActions, Collapse, Avatar, IconButton, Typography } from '@material-ui/core';
+import { Card, CardHeader, CardContent, CardActions, Collapse, Avatar, IconButton, List, ListItem, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -23,30 +23,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const getCaseClass = (cardType) => {
-    let value;
-
     switch (cardType) {
         case CardType.POSITIVE:
-            value = styles.recovered;
-            break;
+            return styles.recovered;
 
         case CardType.NEGATIVE:
-            value = styles.dead;
-            break;
+            return styles.dead;
 
         default:
         case CardType.NEUTRAL:
-            value = styles.infected;
-            break;
+            return styles.infected;
     }
-
-    return value;
 }
 
 const StatisticsCard = (props) => {
     const [expanded, setExpanded] = useState(false);
     const classes = useStyles();
     const handleExpandClick = () => { setExpanded(!expanded); };
+
+    const totalCases = props.total && props.total > 0 ? props.total : 0;
+    const percentage = props.total && props.new ? (props.new / props.total) * 100 : 0;
 
     return (
         <Card>
@@ -61,14 +57,14 @@ const StatisticsCard = (props) => {
                 } />
 
             <CardContent className={styles.cases}>
-                <CountUp start={props.total / 2} end={props.total} duration={1.5} separator="," className={getCaseClass(props.type)} />
+                <CountUp start={totalCases / 2} end={totalCases} duration={1.5} separator="," className={getCaseClass(props.type)} />
 
                 <Typography variant="body2" className={styles.note}>
-                    {((props.new / props.total) * 100).toFixed(2)}% new cases in the past 24 hours
+                    {percentage.toFixed(2)}% new cases in the past 24 hours
                 </Typography>
             </CardContent>
 
-            <CardActions disableSpacing>
+            {/* <CardActions disableSpacing>
                 <IconButton onClick={handleExpandClick} className={clsx(classes.expand, { [classes.expandOpen]: expanded, })} aria-expanded={expanded} aria-label="show more">
                     <ExpandMoreIcon />
                 </IconButton>
@@ -76,12 +72,13 @@ const StatisticsCard = (props) => {
 
             <Collapse in={expanded} timeout="auto">
                 <CardContent>
-                    <Typography>Method:</Typography>
-                    <Typography>
-                        Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes.
-                    </Typography>
+                    <List>
+                        <ListItem>{props.new} NEW CASES</ListItem>
+                        <ListItem>AVG PER DAY</ListItem>
+                        <ListItem>PERcentage recovered in total</ListItem>
+                    </List>
                 </CardContent>
-            </Collapse>
+            </Collapse> */}
         </Card>
     );
 }
