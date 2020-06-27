@@ -19,22 +19,22 @@ export const GetCardValues = async (countryCode) => {
     return [
         {
             title: 'RECOVERED',
-            total: formatValue(data?.TotalRecovered),
-            new: formatValue(data?.NewRecovered),
+            total: data?.TotalRecovered,
+            new: data?.NewRecovered,
             img: CardRecoveredSvg,
             type: CardType.POSITIVE,
         },
         {
             title: 'INFECTED',
-            total: formatValue(data?.TotalConfirmed),
-            new: formatValue(data?.NewConfirmed),
+            total: data?.TotalConfirmed,
+            new: data?.NewConfirmed,
             img: CardInfectedSvg,
             type: CardType.NEUTRAL,
         },
         {
             title: 'DEATHS',
-            total: formatValue(data?.TotalDeaths),
-            new: formatValue(data?.NewDeaths),
+            total: data?.TotalDeaths,
+            new: data?.NewDeaths,
             img: CardDeadSvg,
             type: CardType.NEGATIVE,
         },
@@ -111,5 +111,3 @@ export const GetRecommendedMeasures = () => [
 let countries = null;
 let lastUpdate = null;
 let summary = null;
-
-const formatValue = (value) => value ? value : '-';
