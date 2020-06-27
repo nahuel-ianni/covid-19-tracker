@@ -9,7 +9,13 @@ export const CardType = {
 };
 
 export const GetCardValues = async (countryCode) => {
-    const data = await getSummary(countryCode);
+    if (!summary)
+        summary = await getSummary();
+
+    const data = countryCode
+        ? summary?.Countries?.find(country => country.CountryCode === countryCode)
+        : summary?.Global;
+
     return [
         {
             title: 'RECOVERED',
@@ -35,8 +41,21 @@ export const GetCardValues = async (countryCode) => {
     ]
 };
 
-export const GetCountries = async () => await getCountries();
-export const GetLastUpdateDateTime = async () => getLastUpdateDateTime();
+export const GetCountries = async () => {
+    if (!countries){
+        countries = await getCountries();
+        countries.sort((a, b) => a.Country.localeCompare(b.Country));
+    }
+
+    return countries;
+}
+
+export const GetLastUpdateDateTime = async () => {
+    if (!lastUpdate)
+        lastUpdate = await getLastUpdateDateTime();
+
+    return lastUpdate;
+}
 
 export const GetRecommendedMeasures = () => [
     {
@@ -88,5 +107,9 @@ export const GetRecommendedMeasures = () => [
         img_desc: 'Stay updated'
     },
 ];
+
+let countries = null;
+let lastUpdate = null;
+let summary = null;
 
 const formatValue = (value) => value ? value : '-';
