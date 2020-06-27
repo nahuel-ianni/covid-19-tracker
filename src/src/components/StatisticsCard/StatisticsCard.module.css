@@ -4,7 +4,7 @@
 
 .actions {
     bottom: .125rem;
-    position: absolute!important;
+    position: absolute !important;
     right: .5rem;
 }
 
@@ -12,7 +12,7 @@
     color: #4a5568;
     font-size: xx-large;
     font-weight: 600;
-    padding-top: 0!important;
+    padding-top: 0 !important;
     text-align: center;
 }
 

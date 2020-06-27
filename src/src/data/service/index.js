@@ -42,7 +42,7 @@ export const GetCardValues = async (countryCode) => {
 };
 
 export const GetCountries = async () => {
-    if (!countries){
+    if (!countries) {
         countries = await getCountries();
         countries.sort((a, b) => a.Country.localeCompare(b.Country));
     }
