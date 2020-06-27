@@ -64,13 +64,11 @@ const StatisticsCard = (props) => {
                 </Typography>
             </CardContent>
 
-            {/* <div className={styles.container}> */}
             <CardActions className={styles.container} disableSpacing>
                 <IconButton onClick={handleExpandClick} className={clsx(classes.expand, { [classes.expandOpen]: expanded, }, styles.actions)} aria-expanded={expanded} aria-label="show more">
                     <ExpandMoreIcon />
                 </IconButton>
             </CardActions>
-            {/* </div> */}
 
             <Collapse in={expanded} timeout="auto">
                 <CardContent>
