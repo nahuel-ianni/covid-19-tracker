@@ -1,6 +1,7 @@
 import { getCountries, getLastUpdateDateTime, getSummary } from '../api';
 
 import { CardDeadSvg, CardInfectedSvg, CardRecoveredSvg, CoveredCoughSvg, FaceMaskSvg, HandSanitizerSvg, HelpPhoneSvg, NewspaperSvg, ProtectedFaceSvg, SocialDistancingSvg, WarningMallSvg } from '../../images';
+import { GetPercentage } from '../../utils';
 
 export const CardType = {
     NEUTRAL: 0,
@@ -23,6 +24,11 @@ export const GetCardValues = async (countryCode) => {
             new: data?.NewRecovered,
             img: CardRecoveredSvg,
             type: CardType.POSITIVE,
+            extras: [
+                `${data?.NewRecovered.toLocaleString()} new cases`,
+                `${(data?.TotalRecovered)} cases on average per day`,
+                `${GetPercentage(data?.TotalRecovered, data?.TotalConfirmed)}% recovered`,
+            ],
         },
         {
             title: 'INFECTED',
@@ -37,6 +43,11 @@ export const GetCardValues = async (countryCode) => {
             new: data?.NewDeaths,
             img: CardDeadSvg,
             type: CardType.NEGATIVE,
+            extras: [
+                `${data?.NewRecovered.toLocaleString()} new cases`,
+                `${(data?.TotalRecovered)} cases on average per day`,
+                `${GetPercentage(data?.TotalRecovered, data?.TotalConfirmed)}% recovered`,
+            ],
         },
     ]
 };
