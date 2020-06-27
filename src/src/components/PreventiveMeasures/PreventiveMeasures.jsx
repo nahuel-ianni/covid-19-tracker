@@ -2,26 +2,26 @@ import React, { Fragment } from 'react';
 
 import styles from './PreventiveMeasures.module.css';
 
-import { Card, CardContent, Link, Typography } from '@material-ui/core';
+import { Card, CardContent, Link, List, ListItem, Typography } from '@material-ui/core';
 
 const PreventiveMeasures = (props) => {
     const listItems = props.measures.map((item, i) =>
-        <li key={i}>
+        <ListItem key={i}>
             <img src={item.img} className={styles.img} alt={item.img_desc} />
             <div>
                 <Typography component="h3" variant="inherit">{item.title}</Typography>
                 <Typography>{item.content}</Typography>
             </div>
-        </li>
+        </ListItem>
     );
 
     return (
         <Fragment>
             <Card>
                 <CardContent>
-                    <ul className={styles.ul}>
+                    <List className={styles.ul}>
                         {listItems}
-                    </ul>
+                    </List>
                 </CardContent>
             </Card>
 
