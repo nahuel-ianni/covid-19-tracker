@@ -2,20 +2,31 @@
     Class styles
    ------------------------------------------------- */
 
+.actions {
+    bottom: .125rem;
+    position: absolute!important;
+    right: .5rem;
+}
+
 .cases {
     color: #4a5568;
     font-size: xx-large;
     font-weight: 600;
+    padding-top: 0!important;
     text-align: center;
 }
 
 .container {
-    padding-bottom: 0 !important;
-    text-align: center;
+    position: relative;
 }
 
 .dead {
     color: #e53e3e;
+}
+
+.header {
+    padding-bottom: 0 !important;
+    text-align: center;
 }
 
 .infected {

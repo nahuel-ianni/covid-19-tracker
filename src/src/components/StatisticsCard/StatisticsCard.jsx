@@ -46,9 +46,9 @@ const StatisticsCard = (props) => {
 
     return (
         <Card>
-            <CardHeader title={props.title} titleTypographyProps={{ component: "h3", variant: "inherit", color: "textSecondary" }}
+            <CardHeader title={props.title} titleTypographyProps={{ component: "h3", variant: "subtitle1", color: "textSecondary" }}
                 // subheader="Global"
-                className={styles.container}
+                className={styles.header}
                 avatar={<Avatar src={props.img} alt="Card icon" variant="square" aria-label="statistic" />}
                 action={
                     <IconButton aria-label="share">
@@ -60,15 +60,17 @@ const StatisticsCard = (props) => {
                 <CountUp start={totalCases / 2} end={totalCases} duration={1.5} separator="," className={getCaseClass(props.type)} />
 
                 <Typography variant="body2" className={styles.note}>
-                    {percentage.toFixed(2)}% new cases in the past 24 hours
+                    {percentage.toFixed(2)}% increase in the past 24 hours
                 </Typography>
             </CardContent>
 
-            {/* <CardActions disableSpacing>
-                <IconButton onClick={handleExpandClick} className={clsx(classes.expand, { [classes.expandOpen]: expanded, })} aria-expanded={expanded} aria-label="show more">
+            {/* <div className={styles.container}> */}
+            <CardActions className={styles.container} disableSpacing>
+                <IconButton onClick={handleExpandClick} className={clsx(classes.expand, { [classes.expandOpen]: expanded, }, styles.actions)} aria-expanded={expanded} aria-label="show more">
                     <ExpandMoreIcon />
                 </IconButton>
             </CardActions>
+            {/* </div> */}
 
             <Collapse in={expanded} timeout="auto">
                 <CardContent>
@@ -78,7 +80,7 @@ const StatisticsCard = (props) => {
                         <ListItem>PERcentage recovered in total</ListItem>
                     </List>
                 </CardContent>
-            </Collapse> */}
+            </Collapse>
         </Card>
     );
 }
