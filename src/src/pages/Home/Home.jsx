@@ -37,9 +37,9 @@ const Home = () => {
             </section>
 
             <section>
-                <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
                 <Typography component="h2" variant="inherit" gutterBottom>{countryName}</Typography>
                 <StatisticsPanel values={countryValues} />
+                <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
             </section>
 
             <section>
