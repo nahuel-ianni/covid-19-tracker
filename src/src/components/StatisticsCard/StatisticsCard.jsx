@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 
 import styles from './StatisticsCard.module.css';
@@ -47,8 +47,7 @@ const StatisticsCard = (props) => {
 
     const getCardActions = () =>
         props.extras
-            ?
-            (
+            ? (
                 <CardActions className={styles.container} disableSpacing>
                     <IconButton onClick={handleExpandClick} className={clsx(classes.expand, { [classes.expandOpen]: expanded, }, styles.actions)} aria-expanded={expanded} aria-label="show more">
                         <ExpandMoreIcon />
@@ -59,25 +58,19 @@ const StatisticsCard = (props) => {
 
     const getCollapseContent = () =>
         props.extras
-            ?
-            (
+            ? (
                 <Collapse in={expanded} timeout="auto">
                     <List className={styles.ul}>
                         {props.extras.map((item, i) =>
-                            <Fragment>
-                                {getDivider(i)}
-
-                                <ListItem>
-                                    <Typography variant="body2">{item}</Typography>
-                                </ListItem>
-                            </Fragment>
+                            <ListItem key={i}>
+                                {i !== 0 ? <Divider className={styles.hr} /> : null}
+                                <Typography variant="body2">{item}</Typography>
+                            </ListItem>
                         )}
                     </List>
                 </Collapse>
             )
             : null;
-
-    const getDivider = (index) => index !== 0 ? <ListItem><Divider /></ListItem> : null;
 
     return (
         <Card>
@@ -94,9 +87,7 @@ const StatisticsCard = (props) => {
             <CardContent className={styles.cases}>
                 <CountUp start={totalCases / 2} end={totalCases} duration={1.5} separator="," className={getCaseClass(props.type)} />
 
-                <Typography variant="body2" className={styles.note}>
-                    {percentage}% increase in the past 24 hours
-                </Typography>
+                <Typography variant="body2" className={styles.note}>{percentage}% increase in the past 24 hours</Typography>
             </CardContent>
 
             {getCardActions()}
