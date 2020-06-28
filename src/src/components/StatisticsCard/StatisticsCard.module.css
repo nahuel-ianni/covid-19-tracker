@@ -29,6 +29,11 @@
     text-align: center;
 }
 
+.hr {
+    margin-bottom: 1rem !important;
+    padding: 0 .75rem;
+}
+
 .infected {
     color: #4a5568;
 }
@@ -43,5 +48,7 @@
 
 .ul li {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    margin: 0;
 }
