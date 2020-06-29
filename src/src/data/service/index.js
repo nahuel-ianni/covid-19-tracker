@@ -25,9 +25,9 @@ export const GetCardValues = async (countryCode) => {
             img: CardRecoveredSvg,
             type: CardType.POSITIVE,
             extras: [
-                `${data?.NewRecovered.toLocaleString()} new cases`,
-                `${(data?.TotalRecovered)} cases on average per day`,
-                `${GetPercentage(data?.TotalRecovered, data?.TotalConfirmed)}% recovered`,
+                `${data?.NewRecovered.toLocaleString()} new registered cases`,
+                // `${(data?.TotalRecovered)} cases on average per day`,
+                `${GetPercentage(data?.TotalRecovered, data?.TotalConfirmed)}% of all cases recovered`,
             ],
         },
         {
@@ -36,6 +36,11 @@ export const GetCardValues = async (countryCode) => {
             new: data?.NewConfirmed,
             img: CardInfectedSvg,
             type: CardType.NEUTRAL,
+            extras: [
+                `${data?.NewConfirmed.toLocaleString()} new registered cases`,
+                // `${(data?.TotalRecovered)} cases on average per day`,
+                `${GetPercentage(data?.TotalConfirmed - (data?.TotalRecovered + data?.TotalDeaths), data?.TotalConfirmed)}% of all cases are still active`,
+            ],
         },
         {
             title: 'DEATHS',
@@ -44,9 +49,9 @@ export const GetCardValues = async (countryCode) => {
             img: CardDeadSvg,
             type: CardType.NEGATIVE,
             extras: [
-                `${data?.NewRecovered.toLocaleString()} new cases`,
-                `${(data?.TotalRecovered)} cases on average per day`,
-                `${GetPercentage(data?.TotalRecovered, data?.TotalConfirmed)}% recovered`,
+                `${data?.NewDeaths.toLocaleString()} new registered cases`,
+                // `${(data?.TotalRecovered)} cases on average per day`,
+                `${GetPercentage(data?.TotalDeaths, data?.TotalConfirmed)}% of all cases ended up in death`,
             ],
         },
     ]
