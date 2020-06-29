@@ -43,7 +43,7 @@ const StatisticsCard = (props) => {
     const handleExpandClick = () => { setExpanded(!expanded); };
 
     const totalCases = props.total && props.total > 0 ? props.total : 0;
-    const percentage = props.total && props.new ? GetPercentage(props.new, props.total) : 0;
+    const percentage = props.total && props.new ? GetPercentage(props.new, props.total - props.new) : 0;
 
     const getCardActions = () =>
         props.extras
