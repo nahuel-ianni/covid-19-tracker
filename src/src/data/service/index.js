@@ -38,7 +38,7 @@ export const GetDataByCountry = async (countryCode) => {
                 `${data?.NewRecovered.toLocaleString()} new registered cases`,
                 `${GetPercentage(data?.TotalRecovered, data?.TotalConfirmed)}% of all cases recovered`,
                 countryCode ? `${GetPercentage(data?.TotalRecovered, summary?.Global.TotalRecovered)}% of the global cases are local` : null,
-                population ? `${GetPercentage(data?.TotalRecovered, population)}% of the population recovered` : null,
+                // population ? `${GetPercentage(data?.TotalRecovered, population)}% of the population recovered` : null,
             ],
         },
         {
@@ -64,7 +64,7 @@ export const GetDataByCountry = async (countryCode) => {
                 `${data?.NewDeaths.toLocaleString()} new registered cases`,
                 `${GetPercentage(data?.TotalDeaths, data?.TotalConfirmed)}% of all cases ended up in death`,
                 countryCode ? `${GetPercentage(data?.TotalDeaths, summary?.Global.TotalDeaths)}% of the global cases are local` : null,
-                population ? `${GetPercentage(data?.TotalDeaths, population)}% of the population died infected` : null,
+                // population ? `${GetPercentage(data?.TotalDeaths, population)}% of the population died infected` : null,
             ],
         },
     ]
