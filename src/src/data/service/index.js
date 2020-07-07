@@ -64,14 +64,14 @@ export const GetCountries = async () => {
     }
 
     return countries;
-}
+};
 
 export const GetLastUpdateDateTime = async () => {
     if (!lastUpdate)
         lastUpdate = await getLastUpdateDateTime();
 
     return lastUpdate;
-}
+};
 
 export const GetRecommendedMeasures = () => [
     {
