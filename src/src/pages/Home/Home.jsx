@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import { CountryPicker, PreventiveMeasures, StatisticsPanel } from '../../components';
-import { GetCardValues, GetCountries, GetLastUpdateDateTime, GetRecommendedMeasures } from '../../data/service';
+import { GetCountries, GetDataByCountry, GetLastUpdateDateTime, GetRecommendedMeasures } from '../../data/service';
 
 import { Container, Typography } from '@material-ui/core';
 
@@ -16,7 +16,7 @@ const Home = () => {
 
     useEffect(() => {
         const getCountries = async () => { setCountries(await GetCountries()); }
-        const getGlobalData = async () => { setGlobalValues(await GetCardValues()); }
+        const getGlobalData = async () => { setGlobalValues(await GetDataByCountry()); }
         const getLastUpdate = async () => { setLastUpdate(await GetLastUpdateDateTime()); }
 
         getCountries();
@@ -26,7 +26,7 @@ const Home = () => {
 
     const handleCountryChange = async (country) => {
         setCountryName(country?.Country);
-        setCountryValues(await GetCardValues(country?.ISO2));
+        setCountryValues(await GetDataByCountry(country?.ISO2));
     };
 
     return (

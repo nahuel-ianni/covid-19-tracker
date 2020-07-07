@@ -64,7 +64,7 @@ const StatisticsCard = (props) => {
                         {props.extras.map((item, i) =>
                             <ListItem key={i}>
                                 {i !== 0 && item ? <Divider className={styles.hr} /> : null}
-                                <Typography variant="body2">{item}</Typography>
+                                <Typography variant="body2" align="center">{item}</Typography>
                             </ListItem>
                         )}
                     </List>

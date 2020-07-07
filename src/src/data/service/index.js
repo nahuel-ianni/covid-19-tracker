@@ -1,4 +1,4 @@
-import { getCountries, getLastUpdateDateTime, getSummary } from '../api';
+import { getCountries, getCountryPopulation, getLastUpdateDateTime, getSummary } from '../api';
 
 import { CardDeadSvg, CardInfectedSvg, CardRecoveredSvg, CoveredCoughSvg, FaceMaskSvg, HandSanitizerSvg, HelpPhoneSvg, NewspaperSvg, ProtectedFaceSvg, SocialDistancingSvg, WarningMallSvg } from '../../images';
 import { GetPercentage } from '../../utils';
@@ -9,13 +9,23 @@ export const CardType = {
     NEGATIVE: 2,
 };
 
-export const GetCardValues = async (countryCode) => {
+export const GetDataByCountry = async (countryCode) => {
     if (!summary)
         summary = await getSummary();
+
+    if (countryCode &&
+        !countryPopulation.find(country => country.alpha2Code === countryCode))
+        countryPopulation.push(await getCountryPopulation(countryCode));
 
     const data = countryCode
         ? summary?.Countries?.find(country => country.CountryCode === countryCode)
         : summary?.Global;
+
+    const population = countryCode
+        ? countryPopulation?.find(country => country.alpha2Code === countryCode)?.population
+        : null;
+
+    console.log(countryPopulation);
 
     return [
         {
@@ -26,8 +36,9 @@ export const GetCardValues = async (countryCode) => {
             type: CardType.POSITIVE,
             extras: [
                 `${data?.NewRecovered.toLocaleString()} new registered cases`,
-                // `${(data?.TotalRecovered)} cases on average per day`,
                 `${GetPercentage(data?.TotalRecovered, data?.TotalConfirmed)}% of all cases recovered`,
+                countryCode ? `${GetPercentage(data?.TotalRecovered, summary?.Global.TotalRecovered)}% of the global cases are local` : null,
+                population ? `${GetPercentage(data?.TotalRecovered, population)}% of the population recovered` : null,
             ],
         },
         {
@@ -38,8 +49,9 @@ export const GetCardValues = async (countryCode) => {
             type: CardType.NEUTRAL,
             extras: [
                 `${data?.NewConfirmed.toLocaleString()} new registered cases`,
-                // `${(data?.TotalRecovered)} cases on average per day`,
                 `${GetPercentage(data?.TotalConfirmed - (data?.TotalRecovered + data?.TotalDeaths), data?.TotalConfirmed)}% of all cases are still active`,
+                countryCode ? `${GetPercentage(data?.TotalConfirmed, summary?.Global.TotalConfirmed)}% of the global cases are local` : null,
+                population ? `${GetPercentage(data?.TotalConfirmed, population)}% of the population contracted the virus` : null,
             ],
         },
         {
@@ -50,8 +62,9 @@ export const GetCardValues = async (countryCode) => {
             type: CardType.NEGATIVE,
             extras: [
                 `${data?.NewDeaths.toLocaleString()} new registered cases`,
-                // `${(data?.TotalRecovered)} cases on average per day`,
                 `${GetPercentage(data?.TotalDeaths, data?.TotalConfirmed)}% of all cases ended up in death`,
+                countryCode ? `${GetPercentage(data?.TotalDeaths, summary?.Global.TotalDeaths)}% of the global cases are local` : null,
+                population ? `${GetPercentage(data?.TotalDeaths, population)}% of the population died infected` : null,
             ],
         },
     ]
@@ -125,5 +138,6 @@ export const GetRecommendedMeasures = () => [
 ];
 
 let countries = null;
+let countryPopulation = [];
 let lastUpdate = null;
 let summary = null;
