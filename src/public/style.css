@@ -65,6 +65,7 @@ h3 {
 
 header {
     border-bottom: .2rem solid var(--separator);
+    padding-top: 3.5rem;
 }
 
 hr {
@@ -97,6 +98,17 @@ section {
     font-style: italic;
     margin: .5rem 1rem 0 0 !important;
     text-align: right;
+}
+
+.warning {
+    background-color: #FEEFB3;
+    color: #734600;
+    margin: 0;
+    padding: .5rem;
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    z-index: 100;
 }
 
 /* -------------------------------------------------
