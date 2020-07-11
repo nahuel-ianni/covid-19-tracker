@@ -61,9 +61,9 @@ const StatisticsCard = (props) => {
             ? (
                 <Collapse in={expanded} timeout="auto">
                     <List className={styles.ul}>
-                        {props.extras.map((item, i) =>
+                        {props.extras.filter(item => item).map((item, i) =>
                             <ListItem key={i}>
-                                {i !== 0 && item ? <Divider className={styles.hr} /> : null}
+                                {i !== 0 ? <Divider className={styles.hr} /> : null}
                                 <Typography variant="body2" align="center">{item}</Typography>
                             </ListItem>
                         )}
