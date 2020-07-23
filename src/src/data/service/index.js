@@ -3,13 +3,13 @@ import { getCountries, getCountryPopulation, getLastUpdateDateTime, getSummary }
 import { CardDeadSvg, CardInfectedSvg, CardRecoveredSvg, CoveredCoughSvg, FaceMaskSvg, HandSanitizerSvg, HelpPhoneSvg, NewspaperSvg, ProtectedFaceSvg, SocialDistancingSvg, WarningMallSvg } from '../../images';
 import { GetPercentage } from '../../utils';
 
-export const CardType = {
+const CardType = {
     NEUTRAL: 0,
     POSITIVE: 1,
     NEGATIVE: 2,
 };
 
-export const GetDataByCountry = async (countryCode) => {
+const GetDataByCountry = async (countryCode) => {
     if (!summary)
         summary = await getSummary();
 
@@ -70,7 +70,7 @@ export const GetDataByCountry = async (countryCode) => {
     ]
 };
 
-export const GetCountries = async () => {
+const GetCountries = async () => {
     if (!countries) {
         countries = await getCountries();
         countries.sort((a, b) => a.Country.localeCompare(b.Country));
@@ -79,14 +79,14 @@ export const GetCountries = async () => {
     return countries;
 };
 
-export const GetLastUpdateDateTime = async () => {
+const GetLastUpdateDateTime = async () => {
     if (!lastUpdate)
         lastUpdate = await getLastUpdateDateTime();
 
     return lastUpdate;
 };
 
-export const GetRecommendedMeasures = () => [
+const GetRecommendedMeasures = () => [
     {
         title: 'Wash your hands frequently',
         content: 'Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.',
@@ -141,3 +141,5 @@ let countries = null;
 let countryPopulation = [];
 let lastUpdate = null;
 let summary = null;
+
+export { CardType, GetDataByCountry, GetCountries, GetLastUpdateDateTime, GetRecommendedMeasures };
