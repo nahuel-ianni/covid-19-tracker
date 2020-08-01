@@ -38,8 +38,8 @@ const Home = () => {
 
             <section>
                 <Typography component="h2" variant="inherit" gutterBottom>{countryName}</Typography>
-                <StatisticsPanel values={countryValues} />
                 <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
+                <StatisticsPanel values={countryValues} />
             </section>
 
             <section>

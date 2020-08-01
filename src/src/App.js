@@ -25,7 +25,7 @@ export default class App extends React.Component {
                     <AuthorLinks />
 
                     <Typography gutterBottom>Made by Nahuel Ianni</Typography>
-                    <Typography>Icons made by <a className={styles.a} href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a className={styles.a} href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></Typography>
+                    <Typography variant="caption">Icons made by <a className={styles.a} href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a className={styles.a} href="https://www.flaticon.com/" title="Flaticon">Flaticon</a></Typography>
                 </footer>
             </Fragment>
         )

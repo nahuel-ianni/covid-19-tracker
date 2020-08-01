@@ -52,7 +52,7 @@ const GetDataByCountry = async (countryCode) => {
             ],
         },
         {
-            title: 'DEATHS',
+            title: 'FATAL',
             total: data?.TotalDeaths,
             new: data?.NewDeaths,
             img: images.CardDeadSvg,
