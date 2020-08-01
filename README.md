@@ -58,4 +58,4 @@ Icons taken from [FlatIcon](https://www.flaticon.com/).
 
 
 ## Author
-* **Nahuel Ianni** - *Initial work* - [nahuel-ianni](https://github.com/nahuel-ianni)
+* **Nahuel Ianni** - [nahuel-ianni](https://github.com/nahuel-ianni)
