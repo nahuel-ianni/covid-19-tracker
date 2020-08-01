@@ -9,7 +9,7 @@ const SocialMediaPanel = (props) => {
     const [anchorEl, setAnchorEl] = useState(null);
 
     const shareUrl = window.location.href;
-    const content = `In the past 24 hours, the ${props.title.toLowerCase()} cases increased by ${props.increase}%, ${props.cases} cases reported so far.\n\nSource:`;
+    const content = `In the past 24 hours, the ${props.title.toLowerCase()} cases increased by ${props.increase}%\n${props.cases.toLocaleString()} cases reported so far.\n\nSource:`;
     const emailSubject = `Covid-19 stats - ${shareUrl}`;
 
     const handleClick = (event) => setAnchorEl(event.currentTarget);
