@@ -13,8 +13,7 @@ const GetDataByCountry = async (countryCode) => {
     if (!summary)
         summary = await getSummary();
 
-    if (countryCode &&
-        !countryPopulation.find(country => country.alpha2Code === countryCode))
+    if (countryCode && !countryPopulation.find(country => country.alpha2Code === countryCode))
         countryPopulation.push(await getCountryPopulation(countryCode));
 
     const data = countryCode
@@ -24,8 +23,6 @@ const GetDataByCountry = async (countryCode) => {
     const population = countryCode
         ? countryPopulation?.find(country => country.alpha2Code === countryCode)?.population
         : null;
-
-    console.log(countryPopulation);
 
     return [
         {
