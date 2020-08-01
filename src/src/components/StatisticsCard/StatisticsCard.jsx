@@ -4,10 +4,10 @@ import clsx from 'clsx';
 import styles from './StatisticsCard.module.css';
 import { CardType } from '../../data/service';
 import { GetPercentage } from '../../utils';
+import { SocialMediaPanel } from '../../components';
 
 import { Avatar, Card, CardActions, CardContent, CardHeader, Collapse, Divider, IconButton, List, ListItem, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import CountUp from 'react-countup';
 
@@ -40,6 +40,7 @@ const getCaseClass = (cardType) => {
 const StatisticsCard = (props) => {
     const [expanded, setExpanded] = useState(false);
     const classes = useStyles();
+
     const handleExpandClick = () => { setExpanded(!expanded); };
 
     const totalCases = props.total && props.total > 0 ? props.total : 0;
@@ -78,11 +79,7 @@ const StatisticsCard = (props) => {
                 // subheader="Global"
                 className={styles.header}
                 avatar={<Avatar src={props.img} alt="Card icon" variant="square" aria-label="statistic" />}
-                action={
-                    <IconButton aria-label="share">
-                        <ShareIcon />
-                    </IconButton>
-                } />
+                action={<SocialMediaPanel cases={totalCases} increase={percentage} title={props.title} />} />
 
             <CardContent className={styles.cases}>
                 <CountUp start={totalCases / 2} end={totalCases} duration={1.5} separator="," className={getCaseClass(props.type)} />
