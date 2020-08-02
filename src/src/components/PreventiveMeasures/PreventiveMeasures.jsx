@@ -25,7 +25,7 @@ const PreventiveMeasures = (props) => {
                 </CardContent>
             </Card>
 
-            <Typography component="p" className="legend">
+            <Typography component="p" className="legend" align="center">
                 <Link href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" rel="noopener noreferrer" color="textSecondary">
                     Source: World Health Organization
                 </Link>
