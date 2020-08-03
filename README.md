@@ -5,11 +5,23 @@ You can see a live demo of the application [here](https://nahuel-ianni.github.io
 
 
 ## Table of contents
-* Features - pending
-* Screenshots - pending
+* [Features](#features)
+* [Screenshots](#screenshots)
 * [Getting started](#getting-started)
 * [Built with](#built-with)
 * [Author](#author)
+
+
+## Features
+- Global statistics and number of infected, recovered and fatal cases, updated daily
+- Country-based statistics, including percentage of the local population affected by the virus
+- Preventive measures recommended by the World Health Organization
+- Social media - sharing options
+- Responsive design
+
+
+## Screenshots
+![Home page](./img/home-page.jpg "Home page")
 
 
 ## Getting Started
@@ -65,15 +77,15 @@ In order to change this, please refer to lines 3 and 22 on the `package.json` fi
 22. "deploy": "gh-pages -b demo -d build", 
 ```
 
-
+More information can be found [here](https://create-react-app.dev/docs/deployment).
 
 
 ## Built with
 The application was created using [React](https://reactjs.org/) and [React hooks](https://reactjs.org/docs/hooks-intro.html).
 
-Covid-related data taken from [Covid19api](https://covid19api.com/).  
+Covid-related data taken from [Covid19 api](https://covid19api.com/).  
 List of countries and their population taken from [Rest countries](https://restcountries.eu/).  
-Icons taken from [FlatIcon](https://www.flaticon.com/).
+Icons taken from [Flat Icon](https://www.flaticon.com/).
 
 
 ## Author
