@@ -50,6 +50,23 @@ $ cd src
 $ npm run build
 ```
 
+### Demo version deployment
+The project has been configured to automatically deploy a new production version by running the following command:
+```
+$ npm run deploy
+```
+
+This will create a new build package and deploy it on the `demo` branch of the project on GitHub automatically.  
+In order to change this, please refer to lines 3 and 22 on the `package.json` file:
+```
+3.  "homepage": "https://nahuel-ianni.github.io/covid-19-tracker/",
+    
+
+22. "deploy": "gh-pages -b demo -d build", 
+```
+
+
+
 
 ## Built with
 The application was created using [React](https://reactjs.org/) and [React hooks](https://reactjs.org/docs/hooks-intro.html).
