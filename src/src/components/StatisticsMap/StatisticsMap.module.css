@@ -1,0 +1,11 @@
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.header {
+    bottom: 2rem;
+    color: var(--font-high-contrast);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}

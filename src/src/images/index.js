@@ -1,0 +1,1 @@
+export const HeaderBackground = require('./img-header-bg.jpg');

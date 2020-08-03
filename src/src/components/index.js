@@ -1,0 +1,1 @@
+export { default as StatisticsMap } from './StatisticsMap/StatisticsMap';

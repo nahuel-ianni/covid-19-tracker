@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-function App() {
+import { Home } from './pages';
+
+const App = () => {
     return (
-        <div className="App">
-            Navi
-        </div>
+        <Fragment>
+            <header>
+                <p className="warning">This is a work in progress</p>
+            </header>
+
+            <main>
+                <Home />
+            </main>
+
+            <footer>
+
+            </footer>
+        </Fragment>
     );
 }
 
