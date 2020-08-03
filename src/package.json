@@ -1,6 +1,6 @@
 {
   "name": "covid-19",
-  "homepage": "https://nahuel-ianni.github.io/covid-19-tracker/",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
