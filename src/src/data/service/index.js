@@ -10,6 +10,7 @@ const GetCountries = async () => {
             latlng: country.latlng,
             flagUrl: country.flag
         }));
+        
         countries.sort((a, b) => a.name.localeCompare(b.name));
     }
 

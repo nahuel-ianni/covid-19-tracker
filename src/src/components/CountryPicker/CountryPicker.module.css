@@ -9,10 +9,10 @@
     display: flex !important;
     flex-direction: column;
     margin: 0 auto !important;
-    padding: 1rem !important;
+    padding: .5rem 1rem !important;
     position: relative;
-    top: -2.25rem;
-    width: 35%;
+    top: -2rem;
+    width: 25%;
 }
 
 .country {
