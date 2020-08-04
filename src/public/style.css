@@ -15,10 +15,15 @@ body,
 html {
     color: var(--font-color);
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
     letter-spacing: .025rem;
     line-height: 1.5;
     margin: 0;
     word-spacing: .025rem;
+}
+
+h3 {
+    margin: 1rem 0 .25rem !important;
 }
 
 img {
@@ -35,6 +40,19 @@ section {
 /* -------------------------------------------------
     Class styles
    ------------------------------------------------- */
+
+.card {
+    border-radius: .75rem !important;
+    margin: 2rem 0;
+}
+
+.cardContent {
+    padding: 1rem !important;
+}
+
+.cardHeader {
+    padding-bottom: 0 !important;
+}
 
 .warning {
     background-color: #FEEFB3;

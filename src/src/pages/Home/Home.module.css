@@ -1,0 +1,17 @@
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.container {
+    display: flex !important;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.container section:nth-child(1) {
+    flex: 1.5;
+}
+
+.container section:nth-child(2) {
+    flex: 1;
+}

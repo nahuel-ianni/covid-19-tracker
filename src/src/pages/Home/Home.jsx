@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react';
 
-import { About, StatisticsMap } from '../../components';
+import styles from './Home.module.css';
+import { About, StatisticsMap, TwitterFeed } from '../../components';
+
+import { Container } from '@material-ui/core';
 
 const Home = () => {
     return (
@@ -9,19 +12,27 @@ const Home = () => {
                 <StatisticsMap />
             </section>
 
-            <section>TODO: Cases info</section>
+            <Container className={styles.container} maxWidth="md">
+                <section>
+                    <article>TODO: Cases info</article>
 
-            <section>TODO: Cases list</section>
+                    <article>TODO: Cases list</article>
 
-            <section>TODO: Chart</section>
+                    <article>TODO: Chart</article>
 
-            <section>TODO: News</section>
+                    <article>
+                        <About />
+                    </article>
+                </section>
 
-            <section>TODO: Twitter feed?</section>
+                <section>
+                    <article>TODO: News</article>
 
-            <section>
-                <About />
-            </section>
+                    <article>
+                        <TwitterFeed />
+                    </article>
+                </section>
+            </Container>
         </Fragment>
     );
 }

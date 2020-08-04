@@ -1,19 +1,23 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+
+import { Card, CardContent, CardHeader, Typography } from '@material-ui/core';
 
 const About = () => {
     return (
-        <Fragment>
-            <h2>About this data</h2>
+        <Card className="card" variant="outlined">
+            <CardHeader title="About this data" className="cardHeader" titleTypographyProps={{ component: "h2", variant: "inherit" }} />
 
-            <h3>It changes rapidly</h3>
-            <p>This data changes rapidly and might not reflect some cases still being reported.</p>
+            <CardContent className="cardContent">
+                <Typography component="h3" variant="inherit">It changes rapidly</Typography>
+                <Typography>This data changes rapidly and might not reflect some cases still being reported.</Typography>
 
-            <h3>It only includes people tested</h3>
-            <p>Cases only include people who were tested and confirmed positive. Testing rules and availability vary by country. Some areas may not have data because they haven’t published their data or haven’t done so recently.</p>
+                <Typography component="h3" variant="inherit">It only includes people tested</Typography>
+                <Typography>Cases only include people who were tested and confirmed positive. Testing rules and availability vary by country. Some areas may not have data because they haven’t published their data or haven’t done so recently.</Typography>
 
-            <h3>Why do I see different data from different sources?</h3>
-            <p>There are various sources that are tracking and aggregating coronavirus data. They update at different times and may have different ways of gathering data.</p>
-        </Fragment>
+                <Typography component="h3" variant="inherit">Why do I see different data from different sources?</Typography>
+                <Typography>There are various sources that are tracking and aggregating coronavirus data. They update at different times and may have different ways of gathering data.</Typography>
+            </CardContent>
+        </Card>
     );
 }
 
