@@ -5,9 +5,9 @@
 .header {
     background-image: linear-gradient(to bottom, #030F1F00, #030F1FFF);
     bottom: .4rem;
-    color: var(--font-high-contrast);
+    color: var(--high-contrast-color);
     margin: 0;
-    padding: 1.75rem 0;
+    padding: 1.75rem 0 3.25rem 0;
     position: absolute;
     text-align: center;
     width: 100%;

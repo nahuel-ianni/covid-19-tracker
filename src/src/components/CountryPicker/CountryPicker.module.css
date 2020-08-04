@@ -1,0 +1,38 @@
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.container {
+    background-color: var(--high-contrast-color);
+    border-radius: 2rem;
+    box-shadow: .3em .3em 1em rgba(0, 0, 0, .3);
+    display: flex !important;
+    flex-direction: column;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+    position: relative;
+    top: -2.25rem;
+    width: 35%;
+}
+
+.country {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2rem auto;
+    padding: 1rem !important;
+}
+
+.country img {
+    height: auto;
+    width: 2rem;
+}
+
+/* -------------------------------------------------
+    Media queries
+   ------------------------------------------------- */
+
+@media(max-width: 800px) {
+    .container {
+        width: 75%;
+    }
+}

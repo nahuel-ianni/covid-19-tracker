@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 
 import styles from './StatisticsMap.module.css';
-
 import { HeaderBackground } from '../../images';
 
 const StatisticsMap = () => {
