@@ -3,7 +3,8 @@ import axios from 'axios';
 const countriesBaseUrl = 'https://restcountries.eu/rest/v2/';
 const countriesAll = 'all';
 
-const getCountries = async () => countries; //await fetchData(`${countriesBaseUrl}${countriesAll}`);
+const getCountries = async () => countries;
+// const getCountries = async () => await fetchData(`${countriesBaseUrl}${countriesAll}`);
 
 const fetchData = async (url) => {
     console.log(`Fetching data from ${url}`);

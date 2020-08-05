@@ -7,7 +7,8 @@
     border-radius: 2rem;
     box-shadow: .3em .3em 1em rgba(0, 0, 0, .3);
     display: flex !important;
-    flex-direction: column;
+    flex-direction: row !important;
+    gap: 1rem;
     margin: 0 auto !important;
     padding: .5rem 1rem !important;
     position: relative;
@@ -15,7 +16,7 @@
     width: 25%;
 }
 
-.country {
+.menuItem {
     border-top: 1px solid #00000010 !important;
     display: grid;
     gap: 1rem;
@@ -23,9 +24,18 @@
     padding: 1rem !important;
 }
 
-.country img {
+.menuItem img {
     height: auto;
     width: 2rem;
+}
+
+.search {
+    fill: #000000AA;
+    margin: auto 0;
+}
+
+.select {
+    width: 100%;
 }
 
 /* -------------------------------------------------
