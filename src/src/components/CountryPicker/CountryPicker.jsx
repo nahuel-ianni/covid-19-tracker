@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 
 import styles from './CountryPicker.module.css';
 
-import { Divider, FormControl, FormHelperText, InputLabel, MenuItem, Select, Typography } from '@material-ui/core';
+import { Divider, FormControl, MenuItem, Select, Typography } from '@material-ui/core';
 
 const CountryPicker = ({ countries, handleCountryChange }) => {
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -14,7 +14,6 @@ const CountryPicker = ({ countries, handleCountryChange }) => {
 
     return (
         <FormControl className={styles.container}>
-            {/* <InputLabel id="countryPickerLabel">Country</InputLabel> */}
             <Select labelId="countryPickerLabel" onChange={(e) => onChange(e)} value={selectedCountry}>
                 <MenuItem value="" disabled>Select country</MenuItem>
 
@@ -28,7 +27,6 @@ const CountryPicker = ({ countries, handleCountryChange }) => {
                     </Fragment>
                 )}
             </Select>
-            {/* <FormHelperText><em>Select a country for detailed stats</em></FormHelperText> */}
         </FormControl>
     );
 }

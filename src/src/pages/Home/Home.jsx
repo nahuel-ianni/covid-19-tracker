@@ -17,7 +17,6 @@ const Home = () => {
     }, []);
 
     const handleCountryChange = async (country) => {
-        console.log(country)
         setCountry(country?.Country);
     };
 
