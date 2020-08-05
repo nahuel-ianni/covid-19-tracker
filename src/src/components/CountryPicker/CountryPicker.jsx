@@ -1,8 +1,8 @@
-import React, { Fragment, useState } from 'react';
+import React, { useState } from 'react';
 
 import styles from './CountryPicker.module.css';
 
-import { Divider, FormControl, MenuItem, Select, Typography } from '@material-ui/core';
+import { FormControl, MenuItem, Select, Typography } from '@material-ui/core';
 
 const CountryPicker = ({ countries, handleCountryChange }) => {
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -14,17 +14,14 @@ const CountryPicker = ({ countries, handleCountryChange }) => {
 
     return (
         <FormControl className={styles.container}>
-            <Select labelId="countryPickerLabel" onChange={(e) => onChange(e)} value={selectedCountry}>
+            <Select onChange={(e) => onChange(e)} value={selectedCountry} renderValue={() => selectedCountry.name}>
                 <MenuItem value="" disabled>Select country</MenuItem>
 
                 {countries.map(country =>
-                    <Fragment>
-                        <Divider light />
-                        <MenuItem key={country.code} value={country} className={styles.country}>
-                            <img src={country.flagUrl} alt={`Flag: ${country.name}`} />
-                            <Typography>{country.name}</Typography>
-                        </MenuItem>
-                    </Fragment>
+                    <MenuItem key={country.code} value={country} className={styles.country}>
+                        <img src={country.flagUrl} alt={`Flag: ${country.name}`} />
+                        <Typography>{country.name}</Typography>
+                    </MenuItem>
                 )}
             </Select>
         </FormControl>
