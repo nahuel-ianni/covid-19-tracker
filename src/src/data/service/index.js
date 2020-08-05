@@ -1,4 +1,5 @@
 import { getCountries } from '../api';
+import { WorldIcon } from '../../images';
 
 const GetCountries = async () => {
     if (!countries) {
@@ -10,8 +11,14 @@ const GetCountries = async () => {
             latlng: country.latlng,
             flagUrl: country.flag
         }));
-        
+
         countries.sort((a, b) => a.name.localeCompare(b.name));
+        countries.unshift({
+            name: 'Worldwide',
+            code: '',
+            population: 0,
+            flagUrl: WorldIcon
+        });
     }
 
     return countries;

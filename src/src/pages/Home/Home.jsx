@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
 import styles from './Home.module.css';
-import { About, CountryPicker, StatisticsMap, TwitterFeed } from '../../components';
+import { About, CasesInfo, CountryPicker, StatisticsMap, TwitterFeed } from '../../components';
 import { GetCountries } from '../../data/service';
 
 import { Container } from '@material-ui/core';
@@ -17,7 +17,7 @@ const Home = () => {
     }, []);
 
     const handleCountryChange = async (country) => {
-        setCountry(country?.Country);
+        setCountry(country);
     };
 
     return (
@@ -30,7 +30,9 @@ const Home = () => {
 
             <Container className={styles.container} maxWidth="md">
                 <section>
-                    <article>TODO: Cases info</article>
+                    <article>
+                        <CasesInfo location={country.name} />
+                    </article>
 
                     <article>TODO: Cases list</article>
 
