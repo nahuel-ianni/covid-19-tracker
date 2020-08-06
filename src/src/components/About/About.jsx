@@ -9,13 +9,13 @@ const About = () => {
 
             <CardContent className="cardContent">
                 <Typography component="h3" variant="inherit">It changes rapidly</Typography>
-                <Typography>This data changes rapidly and might not reflect some cases still being reported.</Typography>
+                <Typography variant="body2">This data changes rapidly and might not reflect some cases still being reported.</Typography>
 
                 <Typography component="h3" variant="inherit">It only includes people tested</Typography>
-                <Typography>Cases only include people who were tested and confirmed positive. Testing rules and availability vary by country. Some areas may not have data because they haven’t published their data or haven’t done so recently.</Typography>
+                <Typography variant="body2">Cases only include people who were tested and confirmed positive. Testing rules and availability vary by country. Some areas may not have data because they haven’t published their data or haven’t done so recently.</Typography>
 
                 <Typography component="h3" variant="inherit">Why do I see different data from different sources?</Typography>
-                <Typography>There are various sources that are tracking and aggregating coronavirus data. They update at different times and may have different ways of gathering data.</Typography>
+                <Typography variant="body2">There are various sources that are tracking and aggregating coronavirus data. They update at different times and may have different ways of gathering data.</Typography>
             </CardContent>
         </Card>
     );
