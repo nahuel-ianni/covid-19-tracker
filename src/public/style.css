@@ -23,15 +23,13 @@ html {
     word-spacing: .025rem;
 }
 
+h2,
 h3 {
-    margin: 1rem 0 .25rem !important;
+    font-weight: 400;
 }
 
-img {
-    object-fit: cover;
-    object-position: center;
-    width: 100%;
-    height: 50vh;
+h3 {
+    margin: 1rem 0 .25rem !important;
 }
 
 section {
