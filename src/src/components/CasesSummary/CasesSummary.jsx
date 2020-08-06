@@ -23,7 +23,7 @@ const CasesSummary = ({ location, data, lastUpdate }) => {
                     )}
                 </List>
 
-                <Typography variant="caption" color="textSecondary" className="legend">
+                <Typography variant="caption" color="textSecondary">
                     Updated less than {elapsedTime} ago - Source:&nbsp;
                     <Link href="https://covid19api.com/" target="_blank" rel="noreferrer" color="inherit" underline="always">
                         Johns Hopkins CSSE
