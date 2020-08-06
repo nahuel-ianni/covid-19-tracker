@@ -16,11 +16,11 @@
     gap: .5rem;
 }
 
-ul li * {
+.ul li * {
     margin-right: auto !important;
 }
 
-ul>li:first-child {
+.ul>li:first-child {
     padding-left: 0 !important;
 }
 

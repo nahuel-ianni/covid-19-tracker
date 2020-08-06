@@ -44,7 +44,7 @@ const GetDataByCountry = async (countryCode) => {
         data: [
             {
                 title: 'Recovered',
-                total: data?.TotalRecovered,
+                total: data?.TotalRecovered ?? 0,
                 // new: data?.NewRecovered,
                 // extras: [
                 //     `${data?.NewRecovered.toLocaleString()} new registered cases`,
@@ -55,7 +55,7 @@ const GetDataByCountry = async (countryCode) => {
             },
             {
                 title: 'Confirmed',
-                total: data?.TotalConfirmed,
+                total: data?.TotalConfirmed ?? 0,
                 // new: data?.NewConfirmed,
                 // extras: [
                 //     `${data?.NewConfirmed.toLocaleString()} new registered cases`,
@@ -66,7 +66,7 @@ const GetDataByCountry = async (countryCode) => {
             },
             {
                 title: 'Deaths',
-                total: data?.TotalDeaths,
+                total: data?.TotalDeaths ?? 0,
                 // new: data?.NewDeaths,
                 // extras: [
                 //     `${data?.NewDeaths.toLocaleString()} new registered cases`,
