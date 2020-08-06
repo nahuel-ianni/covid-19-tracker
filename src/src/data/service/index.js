@@ -41,6 +41,9 @@ const GetDataByCountry = async (countryCode) => {
 
     return {
         lastUpdate: summary?.Date,
+        sources: [
+            ['Johns Hopkins CSSE', 'https://covid19api.com/'],
+        ],
         data: [
             {
                 title: 'Recovered',

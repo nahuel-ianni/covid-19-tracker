@@ -6,7 +6,7 @@ import { getElapsedTime } from '../../utils';
 import CountUp from 'react-countup';
 import { Card, CardContent, CardHeader, Link, List, ListItem, Typography } from '@material-ui/core';
 
-const CasesSummary = ({ location, data, lastUpdate }) => {
+const CasesSummary = ({ location, data, sources, lastUpdate }) => {
     const elapsedTime = getElapsedTime(Date.now() - new Date(lastUpdate).getTime());
 
     return (
@@ -18,16 +18,18 @@ const CasesSummary = ({ location, data, lastUpdate }) => {
                     {data?.map((item, i) =>
                         <ListItem key={i}>
                             <Typography variant="body2">{item.title}</Typography>
-                            <CountUp start={item.total / 2} end={item.total} duration={1.5} separator="," className={styles.cases}/>
+                            <CountUp start={item.total / 2} end={item.total} duration={1.5} separator="," className={styles.cases} />
                         </ListItem>
                     )}
                 </List>
 
                 <Typography variant="caption" color="textSecondary">
                     Updated less than {elapsedTime} ago - Source:&nbsp;
-                    <Link href="https://covid19api.com/" target="_blank" rel="noreferrer" color="inherit" underline="always">
-                        Johns Hopkins CSSE
-                    </Link>
+                    {sources?.filter(item => item?.length === 2).map((item) =>
+                        <Link href={item[1]} target="_blank" rel="noreferrer" color="inherit" underline="always">
+                            {item[0]}
+                        </Link>
+                    )}
                 </Typography>
             </CardContent>
         </Card>

@@ -35,7 +35,7 @@ const Home = () => {
             <Container className={styles.container} maxWidth="md">
                 <section>
                     <article>
-                        <CasesSummary location={country.name} data={summary?.data} lastUpdate={summary?.lastUpdate} />
+                        <CasesSummary location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
                     </article>
 
                     <article>TODO: Cases list</article>
