@@ -6,16 +6,13 @@ export const getElapsedTime = (durationInMilliseconds) => {
 
     if (hours) {
         portions.push(`${hours} hours`);
-        // durationInMilliseconds = durationInMilliseconds - (hours * msInHour);
     }
     else {
         const msInMinute = 1000 * 60;
         const minutes = Math.trunc(durationInMilliseconds / msInMinute);
 
-        if (minutes) {
+        if (minutes)
             portions.push(`${minutes} minutes`);
-            // durationInMilliseconds = durationInMilliseconds - (minutes * msInMinute);
-        }
     }
 
     return portions.join(' ');

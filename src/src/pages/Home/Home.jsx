@@ -34,9 +34,7 @@ const Home = () => {
 
             <Container className={styles.container} maxWidth="md">
                 <section>
-                    <article>
-                        <CasesSummary location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
-                    </article>
+                    <CasesSummary location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
 
                     <article>TODO: Cases list</article>
 
@@ -44,17 +42,13 @@ const Home = () => {
 
                     <article>TODO: Preventive measures</article>
 
-                    <article>
-                        <About />
-                    </article>
+                    <About />
                 </section>
 
                 <section>
                     <article>TODO: News</article>
 
-                    <article>
-                        <TwitterFeed />
-                    </article>
+                    <TwitterFeed />
                 </section>
             </Container>
         </Fragment>
