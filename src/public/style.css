@@ -5,6 +5,8 @@
 :root {
     --font-color: #202124;
     --high-contrast-color: #ffffff;
+
+    --separator-color: #00000010;
 }
 
 /* -------------------------------------------------

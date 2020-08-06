@@ -17,7 +17,7 @@
 }
 
 .menuItem {
-    border-top: 1px solid #00000010 !important;
+    border-top: 1px solid var(--separator-color) !important;
     display: grid;
     gap: 1rem;
     grid-template-columns: 2rem auto;

@@ -1,0 +1,29 @@
+/* -------------------------------------------------
+    Class styles
+   ------------------------------------------------- */
+
+.cases {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.ul {
+    display: flex;
+}
+
+.ul li {
+    flex-direction: column;
+    gap: .5rem;
+}
+
+ul li * {
+    margin-right: auto !important;
+}
+
+ul>li:first-child {
+    padding-left: 0 !important;
+}
+
+.ul>li:not(:first-child) {
+    border-left: 1px solid var(--separator-color);
+}
