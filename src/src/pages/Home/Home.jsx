@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
 import styles from './Home.module.css';
-import { About, CasesInfo, CountryPicker, StatisticsMap, TwitterFeed } from '../../components';
+import { About, CasesSummary, CountryPicker, StatisticsMap, TwitterFeed } from '../../components';
 import { GetCountries, GetDataByCountry } from '../../data/service';
 
 import { Container } from '@material-ui/core';
@@ -35,7 +35,7 @@ const Home = () => {
             <Container className={styles.container} maxWidth="md">
                 <section>
                     <article>
-                        <CasesInfo location={country.name} data={summary?.data} lastUpdate={summary?.lastUpdate} />
+                        <CasesSummary location={country.name} data={summary?.data} lastUpdate={summary?.lastUpdate} />
                     </article>
 
                     <article>TODO: Cases list</article>

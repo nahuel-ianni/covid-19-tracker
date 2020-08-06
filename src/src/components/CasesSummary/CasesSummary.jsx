@@ -1,12 +1,12 @@
 import React from 'react';
 
-import styles from './CasesInfo.module.css';
+import styles from './CasesSummary.module.css';
 import { getElapsedTime } from '../../utils';
 
 import CountUp from 'react-countup';
 import { Card, CardContent, CardHeader, Link, List, ListItem, Typography } from '@material-ui/core';
 
-const CasesInfo = ({ location, data, lastUpdate }) => {
+const CasesSummary = ({ location, data, lastUpdate }) => {
     const elapsedTime = getElapsedTime(Date.now() - new Date(lastUpdate).getTime());
 
     return (
@@ -34,4 +34,4 @@ const CasesInfo = ({ location, data, lastUpdate }) => {
     );
 }
 
-export default CasesInfo;
+export default CasesSummary;
