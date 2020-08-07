@@ -3,17 +3,9 @@
    ------------------------------------------------- */
 
 .container {
-    display: flex !important;
-    flex-direction: row;
+    display: grid !important;
+    grid-template-columns: 1.5fr 1fr;
     gap: 2rem;
-}
-
-.container section:nth-child(1) {
-    flex: 1.5;
-}
-
-.container section:nth-child(2) {
-    flex: 1;
 }
 
 /* -------------------------------------------------
@@ -22,6 +14,7 @@
 
 @media(max-width: 800px) {
     .container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 0;
     }
 }

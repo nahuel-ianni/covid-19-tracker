@@ -4,11 +4,14 @@ const countriesBaseUrl = 'https://restcountries.eu/rest/v2/';
 const countriesAll = 'all';
 const covidBaseUrl = 'https://api.covid19api.com/';
 const covidSummary = 'summary';
+const covidCountryHistory = 'dayone/country/';
 
 const getSummary = async () => await fetchData(`${covidBaseUrl}${covidSummary}`);
 
 const getCountries = async () => countries;
 // const getCountries = async () => await fetchData(`${countriesBaseUrl}${countriesAll}`);
+
+const getHistoryByCountry = async (countryCode) => await fetchData(`${covidBaseUrl}${covidCountryHistory}${countryCode}`);
 
 const fetchData = async (url) => {
     console.log(`Fetching data from ${url}`);
@@ -23,7 +26,7 @@ const fetchData = async (url) => {
     }
 }
 
-export { getCountries, getSummary };
+export { getCountries, getHistoryByCountry, getSummary };
 
 
 const countries = [
