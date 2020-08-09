@@ -24,9 +24,9 @@ const CasesSummary = ({ location, data, sources, lastUpdate }) => {
                 </List>
 
                 <Typography variant="caption" color="textSecondary">
-                    Updated less than {elapsedTime} ago - Source:&nbsp;
-                    {sources?.filter(item => item?.length === 2).map((item) =>
-                        <Link href={item[1]} target="_blank" rel="noreferrer" color="inherit" underline="always">
+                    Updated less than {elapsedTime} ago - {sources?.length > 1 ? "Sources" : "Source"}:&nbsp;
+                    {sources?.filter(item => item?.length === 2).map((item, i) =>
+                        <Link key={i} href={item[1]} target="_blank" rel="noreferrer" color="inherit" underline="always">
                             {item[0]}
                         </Link>
                     )}

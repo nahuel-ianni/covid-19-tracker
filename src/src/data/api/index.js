@@ -11,7 +11,7 @@ const getSummary = async () => await fetchData(`${covidBaseUrl}${covidSummary}`)
 const getCountries = async () => countries;
 // const getCountries = async () => await fetchData(`${countriesBaseUrl}${countriesAll}`);
 
-const getHistoryByCountry = async (countryCode) => await fetchData(`${covidBaseUrl}${covidCountryHistory}${countryCode}`);
+const getHistory = async (countryCode) => await fetchData(`${covidBaseUrl}${covidCountryHistory}${countryCode}`);
 
 const fetchData = async (url) => {
     console.log(`Fetching data from ${url}`);
@@ -26,7 +26,7 @@ const fetchData = async (url) => {
     }
 }
 
-export { getCountries, getHistoryByCountry, getSummary };
+export { getCountries, getHistory, getSummary };
 
 
 const countries = [
