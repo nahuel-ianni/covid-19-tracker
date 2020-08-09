@@ -8,8 +8,8 @@ const covidCountryHistory = 'dayone/country/';
 
 const getSummary = async () => await fetchData(`${covidBaseUrl}${covidSummary}`);
 
-const getCountries = async () => countries;
-// const getCountries = async () => await fetchData(`${countriesBaseUrl}${countriesAll}`);
+// const getCountries = async () => countries;
+const getCountries = async () => await fetchData(`${countriesBaseUrl}${countriesAll}`);
 
 const getHistory = async (countryCode) => await fetchData(`${covidBaseUrl}${covidCountryHistory}${countryCode}`);
 
