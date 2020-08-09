@@ -38,7 +38,7 @@ const LineChart = ({ data }) => {
         <Chart data={data} height="250">
             <ValueAxis />
             <ArgumentAxis>
-                <Label rotationAngle={45} overlappingBehavior="rotate" />
+                {/* <Label rotationAngle={45} overlappingBehavior="rotate" /> */}
             </ArgumentAxis>
 
             <LineSeries name="Confirmed" valueField="confirmed" argumentField="date" />
