@@ -4,7 +4,7 @@ import styles from './CasesSummary.module.css';
 import { References } from '../';
 
 import CountUp from 'react-countup';
-import { Card, CardContent, CardHeader, Link, List, ListItem, Typography } from '@material-ui/core';
+import { Card, CardContent, CardHeader, List, ListItem, Typography } from '@material-ui/core';
 
 const CasesSummary = ({ location, data, sources, lastUpdate }) => {
     return (

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import { LineChart, References } from '../';
 
-import { Card, CardContent, CardHeader, Link, Typography } from '@material-ui/core';
+import { Card, CardContent, CardHeader, Typography } from '@material-ui/core';
 
 const CasesOverTime = ({ location, data, sources }) => {
     return (
@@ -14,7 +14,6 @@ const CasesOverTime = ({ location, data, sources }) => {
                     ? (
                         <Fragment>
                             <LineChart data={data} />
-
                             <References sources={sources} />
                         </Fragment>
                     )
