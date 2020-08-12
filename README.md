@@ -1,7 +1,7 @@
 # Covid 19 - Tracker
 Stay updated with the latest information related to the virus, with daily updates for global and local cases.
 
-You can see a live demo of the application <a href="https://nahuel-ianni.github.io/covid-19-tracker/" target="_blank" rel="noreferrer">here</a>.
+You can see a live demo of the application [here](https://nahuel-ianni.github.io/covid-19-tracker/).
 
 
 ## Table of contents
