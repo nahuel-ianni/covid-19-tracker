@@ -21,7 +21,13 @@ You can see a live demo of the application [here](https://nahuel-ianni.github.io
 
 
 ## Screenshots
-![Home page](./img/home-page.jpg "Home page")
+Published version (tag: 'v1.0'):  
+
+![Home page - version 1](./img/home-page.jpg "Home page - version 1")
+
+Working version (master branch):   
+
+![Home page - working version](./img/working-version.jpg "Home page - working version")
 
 
 ## Getting Started
