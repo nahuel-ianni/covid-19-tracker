@@ -36,35 +36,21 @@ const Home = () => {
             <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
 
             <Container className={styles.container} maxWidth="md">
-                <div>
-                    <section>
-                        <CasesSummary location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
-                    </section>
+                <section>
+                    <CasesSummary location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
 
-                    <section>
+                    {country &&
                         <CasesOverTime location={country.name} data={casesOverTime?.data} sources={casesOverTime?.sources} />
-                    </section>
+                    }
+                </section>
 
-                    {/* 
-                        TODO: Cases list
-                        TODO: Chart
-                        TODO: Preventive measures
-                    */}
-                    
-                    <section>
-                        <About />
-                    </section>
-                </div>
+                <section>
+                    <TwitterFeed />
+                </section>
 
-                <div>
-                    {/* 
-                        TODO: News
-                    */}
-
-                    <section>
-                        <TwitterFeed />
-                    </section>
-                </div>
+                <section>
+                    <About />
+                </section>
             </Container>
         </Fragment>
     );
