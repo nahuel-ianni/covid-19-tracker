@@ -1,8 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 
 import styles from './Home.module.css';
-import { About, CasesMap, CasesOverTime, CasesSummary, CountryPicker, TwitterFeed } from '../../components';
-import { GetCountries, GetDataByCountry, GetHistoryByCountry } from '../../data/service';
+import { About, CasesMap, CasesOverTime, CasesSummary, CountryPicker, PreventiveMeasures, TwitterFeed } from '../../components';
+import { GetCountries, GetDataByCountry, GetHistoryByCountry, GetPreventiveMeasures } from '../../data/service';
 
 import { Container } from '@material-ui/core';
 
@@ -10,12 +10,15 @@ const Home = () => {
     const [casesOverTime, setCasesOverTime] = useState([]);
     const [countries, setCountries] = useState([]);
     const [country, setCountry] = useState('');
+    const [preventiveMeasures, setPreventiveMeasures] = useState([]);
     const [summary, setSummary] = useState([]);
 
     useEffect(() => {
         const getCountries = async () => { setCountries(await GetCountries()); }
+        const getPreventiveMeasures = async () => { setPreventiveMeasures(await GetPreventiveMeasures()); }
 
         getCountries();
+        getPreventiveMeasures();
     }, []);
 
     useEffect(() => {
@@ -48,16 +51,11 @@ const Home = () => {
                         <CasesOverTime location={country.name} data={casesOverTime?.data} sources={casesOverTime?.sources} />
                     }
 
-                    <div className="desktop">
-                        <About />
-                    </div>
+                    <PreventiveMeasures data={preventiveMeasures.data} sources={preventiveMeasures.sources} lastUpdate={preventiveMeasures.lastUpdate} />
                 </section>
 
                 <section>
                     <TwitterFeed />
-                </section>
-
-                <section className="mobile">
                     <About />
                 </section>
             </Container>
