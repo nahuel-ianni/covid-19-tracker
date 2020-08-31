@@ -55,9 +55,7 @@ const GetDataByCountry = async (countryCode) => {
 };
 
 const GetHistoryByCountry = async (countryCode) => {
-    // if (!history) {
-    let history = await getHistory(countryCode);
-    // }
+    const history = await getHistory(countryCode);
 
     return {
         sources: [
@@ -74,7 +72,6 @@ const GetHistoryByCountry = async (countryCode) => {
 };
 
 let countries = null;
-// let history = null;
 let summary = null;
 
 export { GetCountries, GetDataByCountry, GetHistoryByCountry };
