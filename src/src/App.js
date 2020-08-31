@@ -14,7 +14,7 @@ const App = () => {
             </main>
 
             <footer>
-
+                <p>Made by Nahuel Ianni</p>
             </footer>
         </Fragment>
     );

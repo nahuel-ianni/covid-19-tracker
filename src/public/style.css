@@ -4,6 +4,7 @@
 
 :root {
     --accent-color: #030F1F;
+    --accent-color-light: #195CB3;
 
     --font-color: #202124;
     --high-contrast-color: #ffffff;
@@ -23,6 +24,15 @@ html {
     line-height: 1.5;
     margin: 0;
     word-spacing: .025rem;
+}
+
+footer {
+    background-color: var(--accent-color);
+    border-top: 1px solid var(--accent-color-light);
+    color: var(--high-contrast-color);
+    margin-top: 1rem;
+    padding: 1rem;
+    text-align: center;
 }
 
 h2,
