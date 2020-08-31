@@ -7,10 +7,6 @@ import { References } from '../';
 import { Card, CardContent, CardHeader, List, ListItem, Typography } from '@material-ui/core';
 
 const PreventiveMeasures = ({ data, lastUpdate, sources }) => {
-    console.log(data)
-    console.log(lastUpdate)
-    console.log(sources)
-
     const listItems = data?.map((item, i) =>
         <ListItem key={i} className={styles.li}>
             <Typography component="h3" variant="inherit">{item.title}</Typography>
