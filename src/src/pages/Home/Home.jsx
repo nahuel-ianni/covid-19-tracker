@@ -14,18 +14,23 @@ const Home = () => {
 
     useEffect(() => {
         const getCountries = async () => { setCountries(await GetCountries()); }
-        const getSummaryData = async () => { setSummary(await GetDataByCountry()); }
 
         getCountries();
-        getSummaryData();
     }, []);
 
-    const handleCountryChange = async (country) => {
-        setCountry(country);
+    useEffect(() => {
+        const getSummaryData = async () => { setSummary(await GetDataByCountry(country?.code)); }
 
-        setCasesOverTime(await GetHistoryByCountry(country?.code));
-        setSummary(await GetDataByCountry(country?.code));
-    };
+        getSummaryData();
+    }, [country]);
+
+    // useEffect(() => {
+    //     const getCasesOverTime = async () => { setCasesOverTime(await GetHistoryByCountry(country?.code)); }
+
+    //     getCasesOverTime();
+    // }, [country]);
+
+    const handleCountryChange = async (country) => setCountry(country);
 
     return (
         <Fragment>
@@ -39,7 +44,7 @@ const Home = () => {
                 <section>
                     <CasesSummary location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
 
-                    {country &&
+                    {country && casesOverTime?.data &&
                         <CasesOverTime location={country.name} data={casesOverTime?.data} sources={casesOverTime?.sources} />
                     }
 
