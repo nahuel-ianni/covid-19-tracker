@@ -42,13 +42,17 @@ const Home = () => {
                     {country &&
                         <CasesOverTime location={country.name} data={casesOverTime?.data} sources={casesOverTime?.sources} />
                     }
+
+                    <div className="desktop">
+                        <About />
+                    </div>
                 </section>
 
                 <section>
                     <TwitterFeed />
                 </section>
 
-                <section>
+                <section className="mobile">
                     <About />
                 </section>
             </Container>

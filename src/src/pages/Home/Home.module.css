@@ -5,7 +5,7 @@
 .container {
     display: grid !important;
     grid-template-columns: 1.5fr 1fr;
-    gap: 2rem;
+    column-gap: 2rem;
 }
 
 /* -------------------------------------------------

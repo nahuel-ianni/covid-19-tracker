@@ -65,6 +65,14 @@ section {
     padding-bottom: 0 !important;
 }
 
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
 .warning {
     background-color: #FEEFB3;
     color: #734600;
@@ -74,4 +82,18 @@ section {
     text-align: center;
     width: 100%;
     z-index: 100;
+}
+
+/* -------------------------------------------------
+    Media queries
+   ------------------------------------------------- */
+
+@media(max-width: 800px) {
+    .desktop {
+        display: none;
+    }
+    
+    .mobile {
+        display: block;
+    }
 }
