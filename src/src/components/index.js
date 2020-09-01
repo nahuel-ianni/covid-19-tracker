@@ -1,4 +1,5 @@
 export { default as About } from './About/About';
+export { default as CasesDetail } from './CasesDetail/CasesDetail';
 export { default as CasesMap } from './CasesMap/CasesMap';
 export { default as CasesOverTime } from './CasesOverTime/CasesOverTime';
 export { default as CasesSummary } from './CasesSummary/CasesSummary';

@@ -25,7 +25,7 @@ const PreventiveMeasures = ({ data, lastUpdate, sources }) => {
                 <References sources={sources} lastUpdate={lastUpdate} />
             </CardContent>
         </Card>
-    )
+    );
 }
 
 export default PreventiveMeasures;

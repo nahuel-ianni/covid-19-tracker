@@ -1,4 +1,5 @@
 import { getCountries, getHistory, getSummary } from '../api';
+import { getPercentage } from '../../utils';
 import { WorldIcon } from '../../images';
 
 const GetCountries = async () => {
@@ -32,6 +33,10 @@ const GetDataByCountry = async (countryCode) => {
         ? summary?.Countries?.find(country => country.CountryCode === countryCode)
         : summary?.Global;
 
+    const population = countryCode
+        ? countries?.find(country => country.code === countryCode)?.population
+        : null;
+
     return {
         lastUpdate: summary?.Date,
         sources: [
@@ -39,19 +44,37 @@ const GetDataByCountry = async (countryCode) => {
         ],
         data: [
             {
+                title: 'Total cases',
+                total: data?.TotalConfirmed ?? 0,
+                new: data?.NewConfirmed ?? 0,
+                extras: [
+                    `${data?.NewConfirmed.toLocaleString()} new cases in the past 24 hours`,
+                    `${getPercentage(data?.TotalConfirmed - (data?.TotalRecovered + data?.TotalDeaths), data?.TotalConfirmed)}% of all cases are still active`,
+                    countryCode ? `${getPercentage(data?.TotalConfirmed, summary?.Global.TotalConfirmed)}% of the global cases are local` : null,
+                    population ? `${getPercentage(data?.TotalConfirmed, population)}% of the population contracted the virus` : null,
+                ],
+            },
+            {
                 title: 'Recovered',
                 total: data?.TotalRecovered ?? 0,
                 new: data?.NewRecovered ?? 0,
-            },
-            {
-                title: 'Confirmed',
-                total: data?.TotalConfirmed ?? 0,
-                new: data?.NewConfirmed ?? 0,
+                extras: [
+                    `${data?.NewRecovered.toLocaleString()} new cases in the past 24 hours`,
+                    `${getPercentage(data?.TotalRecovered, data?.TotalConfirmed)}% of all cases recovered`,
+                    countryCode ? `${getPercentage(data?.TotalRecovered, summary?.Global.TotalRecovered)}% of the global cases are local` : null,
+                    population ? `${getPercentage(data?.TotalRecovered, population)}% of the population got infected but recovered` : null,
+                ],
             },
             {
                 title: 'Deaths',
                 total: data?.TotalDeaths ?? 0,
                 new: data?.NewDeaths ?? 0,
+                extras: [
+                    `${data?.NewDeaths.toLocaleString()} new cases in the past 24 hours`,
+                    `${getPercentage(data?.TotalDeaths, data?.TotalConfirmed)}% of all cases ended up in death`,
+                    countryCode ? `${getPercentage(data?.TotalDeaths, summary?.Global.TotalDeaths)}% of the global cases are local` : null,
+                    population ? `${getPercentage(data?.TotalDeaths, population)}% of the population died because of the virus` : null,
+                ],
             },
         ]
     }
