@@ -43,7 +43,7 @@ const Home = () => {
 
             <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
 
-            <Container className={styles.container} maxWidth="md">
+            <Container className={styles.container}>
                 <section>
                     <CasesSummary location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
 
