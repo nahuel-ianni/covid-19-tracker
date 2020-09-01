@@ -1,10 +1,11 @@
 import React from 'react';
 
 import styles from './CasesDetail.module.css';
+import { References } from '../';
 
 import { Card, CardContent, CardHeader, List, ListItem, Typography } from '@material-ui/core';
 
-const CasesDetail = ({ data, location }) => {
+const CasesDetail = ({ data, lastUpdate, location, sources }) => {
     return (
         <Card className="card" variant="outlined">
             <CardHeader title="Details" subheader={location ?? 'Worldwide'} className="cardHeader" titleTypographyProps={{ component: "h2", variant: "inherit" }} />
@@ -26,6 +27,8 @@ const CasesDetail = ({ data, location }) => {
                         )}
                     </List>
                 }
+
+                <References sources={sources} lastUpdate={lastUpdate} />
             </CardContent>
         </Card>
     );

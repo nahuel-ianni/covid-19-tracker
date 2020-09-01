@@ -47,7 +47,7 @@ const Home = () => {
                 <section>
                     <CasesSummary location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
 
-                    <CasesDetail location={country.name} data={summary?.data} />
+                    <CasesDetail location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
 
                     {country && casesOverTime?.data &&
                         <CasesOverTime location={country.name} data={casesOverTime?.data} sources={casesOverTime?.sources} />

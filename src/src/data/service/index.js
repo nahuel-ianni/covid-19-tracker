@@ -71,9 +71,9 @@ const GetDataByCountry = async (countryCode) => {
                 new: data?.NewDeaths ?? 0,
                 extras: [
                     `${data?.NewDeaths.toLocaleString()} new cases in the past 24 hours`,
-                    `${getPercentage(data?.TotalDeaths, data?.TotalConfirmed)}% of all cases ended up in death`,
+                    `${getPercentage(data?.TotalDeaths, data?.TotalConfirmed)}% of all cases were fatal`,
                     countryCode ? `${getPercentage(data?.TotalDeaths, summary?.Global.TotalDeaths)}% of the global cases are local` : null,
-                    population ? `${getPercentage(data?.TotalDeaths, population)}% of the population died because of the virus` : null,
+                    population ? `${getPercentage(data?.TotalDeaths, population)}% of the country population died because of the virus` : null,
                 ],
             },
         ]
