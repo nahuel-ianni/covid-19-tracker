@@ -41,14 +41,17 @@ const GetDataByCountry = async (countryCode) => {
             {
                 title: 'Recovered',
                 total: data?.TotalRecovered ?? 0,
+                new: data?.NewRecovered ?? 0,
             },
             {
                 title: 'Confirmed',
                 total: data?.TotalConfirmed ?? 0,
+                new: data?.NewConfirmed ?? 0,
             },
             {
                 title: 'Deaths',
                 total: data?.TotalDeaths ?? 0,
+                new: data?.NewDeaths ?? 0,
             },
         ]
     }
