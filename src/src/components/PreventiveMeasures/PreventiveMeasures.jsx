@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styles from './PreventiveMeasures.module.css';
-
 import { References } from '../';
 
 import { Card, CardContent, CardHeader, List, ListItem, Typography } from '@material-ui/core';
