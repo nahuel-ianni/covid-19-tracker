@@ -58,7 +58,7 @@ section {
 }
 
 .cardContent {
-    padding: 1rem !important;
+    padding: 0 1rem 1rem 1rem !important;
 }
 
 .cardHeader {

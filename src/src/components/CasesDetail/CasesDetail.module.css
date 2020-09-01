@@ -7,3 +7,7 @@
     flex-direction: column;
     padding: 0 !important;
 }
+
+.ul>li:not(:last-child) {
+    border-bottom: 1px solid var(--separator-color);
+}

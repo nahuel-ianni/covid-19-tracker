@@ -12,13 +12,13 @@ const CasesDetail = ({ data, lastUpdate, location, sources }) => {
 
             <CardContent className="cardContent">
                 {
-                    <List>
+                    <List className={styles.ul}>
                         {data?.filter(x => x).map((item, i) =>
                             <ListItem key={i} className={styles.li}>
                                 <Typography component="h3" variant="inherit">{item.title}</Typography>
                                 <List>
                                     {item.extras?.filter(x => x).map((extra, x) =>
-                                        <ListItem key={x} className={styles.li}>
+                                        <ListItem key={x}>
                                             <Typography variant="body2">{extra}</Typography>
                                         </ListItem>
                                     )}
