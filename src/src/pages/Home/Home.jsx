@@ -53,7 +53,7 @@ const Home = () => {
                         <CasesOverTime location={country.name} data={casesOverTime?.data} sources={casesOverTime?.sources} />
                     }
 
-                    <PreventiveMeasures data={preventiveMeasures.data} sources={preventiveMeasures.sources} lastUpdate={preventiveMeasures.lastUpdate} />
+                    {/* <PreventiveMeasures data={preventiveMeasures.data} sources={preventiveMeasures.sources} lastUpdate={preventiveMeasures.lastUpdate} /> */}
                 </section>
 
                 <section>
