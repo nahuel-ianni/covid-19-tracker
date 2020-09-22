@@ -75,9 +75,10 @@ $ npm run deploy
 ```
 
 This will create a new build package and deploy it on the `demo` branch of the project on GitHub automatically.  
-In order to change this, please refer to line 22 on the `package.json` file:
+In order to change this, please refer to lines 21 and 22 on the `package.json` file:
 ```
-"deploy": "gh-pages -b demo -d build", 
+"predeploy": "npm run build",
+"deploy": "gh-pages -b demo -d build",
 ```
 
 More information can be found [here](https://create-react-app.dev/docs/deployment).
