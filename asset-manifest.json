@@ -1,34 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.97ba1feb.chunk.css",
-    "main.js": "./static/js/main.edd2b93f.chunk.js",
-    "main.js.map": "./static/js/main.edd2b93f.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.f89affb8.js",
-    "runtime-main.js.map": "./static/js/runtime-main.f89affb8.js.map",
-    "static/js/2.fe2488ae.chunk.js": "./static/js/2.fe2488ae.chunk.js",
-    "static/js/2.fe2488ae.chunk.js.map": "./static/js/2.fe2488ae.chunk.js.map",
+    "main.css": "./static/css/main.3f5c5e18.chunk.css",
+    "main.js": "./static/js/main.7d69248c.chunk.js",
+    "main.js.map": "./static/js/main.7d69248c.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.0660989e.js",
+    "runtime-main.js.map": "./static/js/runtime-main.0660989e.js.map",
+    "static/js/2.200ae09a.chunk.js": "./static/js/2.200ae09a.chunk.js",
+    "static/js/2.200ae09a.chunk.js.map": "./static/js/2.200ae09a.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.3e457ea702753977e30ac0845e7e7f9e.js": "./precache-manifest.3e457ea702753977e30ac0845e7e7f9e.js",
+    "precache-manifest.4b9af839ec47ac227bb3dc3eaead4ea5.js": "./precache-manifest.4b9af839ec47ac227bb3dc3eaead4ea5.js",
     "service-worker.js": "./service-worker.js",
-    "static/css/main.97ba1feb.chunk.css.map": "./static/css/main.97ba1feb.chunk.css.map",
-    "static/js/2.fe2488ae.chunk.js.LICENSE.txt": "./static/js/2.fe2488ae.chunk.js.LICENSE.txt",
-    "static/media/img-card-dead.svg": "./static/media/img-card-dead.6bf7935f.svg",
-    "static/media/img-card-infected.svg": "./static/media/img-card-infected.d422cf44.svg",
-    "static/media/img-card-recovered.svg": "./static/media/img-card-recovered.d5bc9d01.svg",
-    "static/media/img-covered-cough.svg": "./static/media/img-covered-cough.a2b91ff6.svg",
-    "static/media/img-face-mask.svg": "./static/media/img-face-mask.0559d661.svg",
-    "static/media/img-hand-sanitizer.svg": "./static/media/img-hand-sanitizer.2335736b.svg",
-    "static/media/img-help-phone.svg": "./static/media/img-help-phone.571f590f.svg",
-    "static/media/img-newspaper.svg": "./static/media/img-newspaper.e3118641.svg",
-    "static/media/img-protected-face.svg": "./static/media/img-protected-face.ab0eb2e2.svg",
-    "static/media/img-red-virus.svg": "./static/media/img-red-virus.5a6b24de.svg",
-    "static/media/img-social-distancing.svg": "./static/media/img-social-distancing.ab46258a.svg",
-    "static/media/img-warning-mall.svg": "./static/media/img-warning-mall.baae8394.svg"
+    "static/css/main.3f5c5e18.chunk.css.map": "./static/css/main.3f5c5e18.chunk.css.map",
+    "static/js/2.200ae09a.chunk.js.LICENSE.txt": "./static/js/2.200ae09a.chunk.js.LICENSE.txt",
+    "static/media/img-header-bg.jpg": "./static/media/img-header-bg.6eb388f5.jpg",
+    "static/media/img-world-icon.svg": "./static/media/img-world-icon.9563fae0.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f89affb8.js",
-    "static/js/2.fe2488ae.chunk.js",
-    "static/css/main.97ba1feb.chunk.css",
-    "static/js/main.edd2b93f.chunk.js"
+    "static/js/runtime-main.0660989e.js",
+    "static/js/2.200ae09a.chunk.js",
+    "static/css/main.3f5c5e18.chunk.css",
+    "static/js/main.7d69248c.chunk.js"
   ]
 }
