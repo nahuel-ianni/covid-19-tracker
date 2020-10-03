@@ -5,14 +5,14 @@ const getElapsedTime = (durationInMilliseconds) => {
     const hours = Math.trunc(durationInMilliseconds / msInHour);
 
     if (hours) {
-        portions.push(`${hours} hours`);
+        portions.push(hours > 1 ? `${hours} hours` : `${hours} hour`);
     }
     else {
-        const msInMinute = 1000 * 60;
-        const minutes = Math.trunc(durationInMilliseconds / msInMinute);
+        const msInMinutes = 1000 * 60;
+        const minutes = Math.trunc(durationInMilliseconds / msInMinutes);
 
         if (minutes)
-            portions.push(`${minutes} minutes`);
+            portions.push(minutes > 1 ? `${minutes} minutes` : `${minutes} minute`);
     }
 
     return portions.join(' ');
