@@ -19,13 +19,13 @@
 .menuItem {
     border-top: 1px solid var(--separator-color) !important;
     display: grid;
-    gap: 1rem;
     grid-template-columns: 2rem auto;
     padding: 1rem !important;
 }
 
 .menuItem img {
     height: auto;
+    margin-right: 1rem;
     width: 2rem;
 }
 
