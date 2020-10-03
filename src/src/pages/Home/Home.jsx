@@ -41,7 +41,9 @@ const Home = () => {
                 <CasesMap />
             </section>
 
-            <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
+            <article className={styles.picker}>
+                <CountryPicker countries={countries} handleCountryChange={handleCountryChange} />
+            </article>
 
             <Container className={styles.container}>
                 <section>

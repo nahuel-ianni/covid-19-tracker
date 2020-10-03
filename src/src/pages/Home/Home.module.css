@@ -8,13 +8,18 @@
     column-gap: 2rem;
 }
 
+.picker {
+    position: sticky;
+    top: 5rem;
+    z-index: 10;
+}
+
 /* -------------------------------------------------
     Media queries
    ------------------------------------------------- */
 
 @media(max-width: 800px) {
     .container {
-        grid-template-columns: 1fr;
-        gap: 0;
+        grid-template-columns: 100%;
     }
 }
