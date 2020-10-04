@@ -6,10 +6,11 @@ import { EventTracker } from '@devexpress/dx-react-chart';
 
 const LineChart = ({ data }) => {
     const legendStyles = () => ({
-        root: {
+        root: {            
             display: 'flex',
-            margin: 'auto',
-            flexDirection: 'row',
+            // flexDirection: 'row',
+            // margin: 'auto',
+            padding: '0',
         },
     });
 
@@ -22,7 +23,8 @@ const LineChart = ({ data }) => {
 
     const legendItemStyles = () => ({
         item: {
-            flexDirection: 'column',
+            // display: 'flex',
+            // backgroundColor: 'lightcyan',
         },
     });
 
@@ -36,8 +38,8 @@ const LineChart = ({ data }) => {
 
     return (
         <Chart data={data} height="250">
-            <ValueAxis />
-            <ArgumentAxis>
+            <ValueAxis showGrid={true} />
+            <ArgumentAxis showGrid={true}>
                 {/* <Label rotationAngle={45} overlappingBehavior="rotate" /> */}
             </ArgumentAxis>
 

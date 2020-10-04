@@ -39,9 +39,7 @@ const GetDataByCountry = async (countryCode) => {
 
     return {
         lastUpdate: summary?.Date,
-        sources: [
-            ['Johns Hopkins CSSE', 'https://covid19api.com/'],
-        ],
+        sources: [['Johns Hopkins CSSE', 'https://covid19api.com/'],],
         data: [
             {
                 title: 'Total cases',
@@ -88,27 +86,43 @@ const GetDataByCountry = async (countryCode) => {
 };
 
 const GetHistoryByCountry = async (countryCode) => {
-    const history = await getHistory(countryCode);
+    if (!countryCode)
+        return [];
 
-    return {
-        sources: [
-            ['Johns Hopkins CSSE', 'https://covid19api.com/'],
-        ],
-        data: history?.map(log => ({
+    if (!histories.has(countryCode)) {
+        const history = await getHistory(countryCode).then(array => array?.reverse());
+        histories.set(countryCode, history);
+    }
+
+    const history = histories.get(countryCode);
+    const map = new Map();
+
+    for (let index = 0; index < history?.length; index++) {
+        const log = history[index];
+        const date = new Date(log.Date);
+        const key = `${date.getMonth() + 1}, ${date.getFullYear()}`;
+
+        if (map.has(key))
+            continue;
+
+        map.set(key, {
             active: log.Active,
             confirmed: log.Confirmed,
-            date: log.Date,
+            date: new Intl.DateTimeFormat('en-US', { month: 'short' }).format(date),
             deaths: log.Deaths,
             recovered: log.Recovered,
-        }))
+        });
+    }
+
+    return {
+        sources: [['Johns Hopkins CSSE', 'https://covid19api.com/'],],
+        data: [...map.values()].reverse(),
     }
 };
 
 const GetPreventiveMeasures = async () => {
     return {
-        sources: [
-            ['World Health Organization', 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public'],
-        ],
+        sources: [['World Health Organization', 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public'],],
         data: [
             {
                 title: 'Wash your hands frequently',
@@ -147,6 +161,7 @@ const GetPreventiveMeasures = async () => {
 };
 
 let countries = null;
+let histories = new Map();
 let summary = null;
 
 export { GetCountries, GetDataByCountry, GetHistoryByCountry, GetPreventiveMeasures };

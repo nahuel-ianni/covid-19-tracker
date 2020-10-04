@@ -27,11 +27,11 @@ const Home = () => {
         getSummaryData();
     }, [country]);
 
-    // useEffect(() => {
-    //     const getCasesOverTime = async () => { setCasesOverTime(await GetHistoryByCountry(country?.code)); }
+    useEffect(() => {
+        const getCasesOverTime = async () => { setCasesOverTime(await GetHistoryByCountry(country?.code)); }
 
-    //     getCasesOverTime();
-    // }, [country]);
+        getCasesOverTime();
+    }, [country]);
 
     const handleCountryChange = async (country) => setCountry(country);
 
@@ -51,7 +51,7 @@ const Home = () => {
 
                     <CasesDetail location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
 
-                    {country && casesOverTime?.data &&
+                    {country && casesOverTime?.data?.length > 0 &&
                         <CasesOverTime location={country.name} data={casesOverTime?.data} sources={casesOverTime?.sources} />
                     }
 
