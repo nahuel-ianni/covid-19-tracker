@@ -88,8 +88,7 @@ More information can be found [here](https://create-react-app.dev/docs/deploymen
 The application was created using [React](https://reactjs.org/) and [React hooks](https://reactjs.org/docs/hooks-intro.html).
 
 Covid-related data taken from [Covid19 api](https://covid19api.com/).  
-List of countries and their population taken from [Rest countries](https://restcountries.eu/).  
-Icons taken from [Flat Icon](https://www.flaticon.com/).
+List of countries and their population taken from [Rest countries](https://restcountries.eu/).
 
 
 ## Author
