@@ -47,12 +47,12 @@ const Home = () => {
 
             <Container className={styles.container}>
                 <section>
-                    <CasesSummary location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
+                    <CasesSummary location={country?.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
 
-                    <CasesDetail location={country.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
+                    <CasesDetail location={country?.name} data={summary?.data} sources={summary?.sources} lastUpdate={summary?.lastUpdate} />
 
                     {country && casesOverTime?.data?.length > 0 &&
-                        <CasesOverTime location={country.name} data={casesOverTime?.data} sources={casesOverTime?.sources} />
+                        <CasesOverTime location={country?.name} data={casesOverTime?.data} sources={casesOverTime?.sources} />
                     }
 
                     {/* <PreventiveMeasures data={preventiveMeasures.data} sources={preventiveMeasures.sources} lastUpdate={preventiveMeasures.lastUpdate} /> */}
