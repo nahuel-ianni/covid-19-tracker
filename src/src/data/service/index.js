@@ -87,13 +87,14 @@ const GetDataByCountry = async (countryCode) => {
 
 const GetHistoryByCountry = async (countryCode) => {
     if (!countryCode)
-        return [];
-
+    return [];
+    
     if (!histories.has(countryCode)) {
         const history = await getHistory(countryCode).then(array => array?.reverse());
         histories.set(countryCode, history);
     }
-
+    
+    const currentYear = new Date().getFullYear();
     const history = histories.get(countryCode);
     const map = new Map();
 
@@ -102,7 +103,7 @@ const GetHistoryByCountry = async (countryCode) => {
         const date = new Date(log.Date);
         const key = `${date.getMonth() + 1}, ${date.getFullYear()}`;
 
-        if (map.has(key))
+        if (map.has(key) || date.getFullYear() === currentYear)
             continue;
 
         map.set(key, {
